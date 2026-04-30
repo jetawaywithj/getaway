@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Amalfi Coast — Cover</title>
+<title>JET · Amalfi Coast — Cover (Serif Variant)</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
+  /* Override: swap display family from Inter Display → Playfair Display.
+   * Same composition, different headline font — for side-by-side comparison.
+   */
+  .cover { --font-display: var(--font-display-serif); }
+
   .cover {
     padding: 0.85in 1in 0.9in;
   }
@@ -14,8 +19,8 @@
   }
   .cover-mark .jet {
     font-family: var(--font-display);
-    font-weight: 300;
-    font-size: 14pt;
+    font-weight: 400;
+    font-size: 16pt;
     letter-spacing: 0.42em;
     text-indent: 0.42em;
     color: var(--ink);
@@ -44,10 +49,10 @@
   }
   .cover-title {
     font-family: var(--font-display);
-    font-weight: 100;
-    font-size: 52pt;
+    font-weight: 400;
+    font-size: 64pt;
     line-height: 1;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.005em;
     color: var(--ink);
   }
   .cover-meta {

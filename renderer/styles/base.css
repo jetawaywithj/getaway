@@ -1,9 +1,72 @@
 /* JET — Joanna Elizabeth Travel · base typography & layout primitives
- * Type system: Inter Display (display sans), EB Garamond (body serif),
- *              Dancing Script (signature), Inter (labels).
- * Page: US Letter portrait, full-bleed CSS @page, no print margins —
- *       margins are part of the layout, not the print frame.
+ * Type slots: display-sans (Inter Display) | display-serif (Playfair Display)
+ *             body (EB Garamond) | script (Allura) | label (Montserrat)
+ * Page: US Letter portrait, full-bleed CSS @page.
+ *
+ * Fonts ship locally from @fontsource/* via woff2 — no network at render.
+ * For production swaps to paid fonts (Brittany Signature, Safira March,
+ * The Seasons): drop the .otf/.woff2 file in renderer/assets/fonts and
+ * point the matching @font-face at it.
  */
+
+/* ─────────────────────────────────────────────────────── @font-face */
+
+@font-face {
+  font-family: 'Allura';
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/allura/files/allura-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Italianno';
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/italianno/files/italianno-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/playfair-display/files/playfair-display-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 400; font-style: italic; font-display: swap;
+  src: url('../node_modules/@fontsource/playfair-display/files/playfair-display-latin-400-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 500; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/playfair-display/files/playfair-display-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-weight: 300; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-weight: 400; font-style: italic; font-display: swap;
+  src: url('../node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff2') format('woff2');
+}
+
+/* ─────────────────────────────────────────────────────── page setup */
 
 @page {
   size: 8.5in 11in;
@@ -15,8 +78,8 @@
 html, body {
   width: 8.5in;
   height: 11in;
-  background: #F5EFE6;        /* cream paper */
-  color: #1F2024;             /* deep ink */
+  background: #F5EFE6;
+  color: #1F2024;
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 11pt;
   line-height: 1.55;
@@ -31,13 +94,16 @@ html, body {
   --ink-soft: #4A4A4F;
   --ink-mute: #8A8A90;
   --paper: #F5EFE6;
-  --paper-warm: #EFE6D8;
-  --rule: #1F2024;
 
-  --font-display: 'Inter Display', 'Inter', sans-serif;
+  /* Type slots — swap these to change the system globally */
+  --font-display-sans: 'Inter Display', 'Inter', sans-serif;
+  --font-display-serif: 'Playfair Display', Georgia, serif;
   --font-body: 'EB Garamond', Georgia, serif;
-  --font-script: 'Dancing Script', cursive;
-  --font-label: 'Inter', sans-serif;
+  --font-script: 'Allura', cursive;
+  --font-label: 'Montserrat', 'Inter', sans-serif;
+
+  /* Default display family — override per template via .display-serif class */
+  --font-display: var(--font-display-sans);
 }
 
 .page {
@@ -48,59 +114,7 @@ html, body {
   overflow: hidden;
 }
 
-/* ─────────────────────────────────────────────────────── type primitives */
-
-.display {
-  font-family: var(--font-display);
-  font-weight: 200;            /* Inter Display Thin/ExtraLight */
-  letter-spacing: 0.01em;
-  line-height: 0.95;
-  color: var(--ink);
-}
-
-.script {
-  font-family: var(--font-script);
-  font-weight: 400;
-  letter-spacing: 0.005em;
-  color: var(--ink);
-}
-
-.body {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 11.5pt;
-  line-height: 1.55;
-  color: var(--ink);
-}
-
-.italic {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--ink-soft);
-}
-
-.label {
-  font-family: var(--font-label);
-  font-weight: 500;
-  font-size: 7.5pt;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.label-soft { color: var(--ink-mute); }
-
-.hairline {
-  width: 100%;
-  height: 1px;
-  background: var(--rule);
-  opacity: 0.85;
-}
-
-/* ─────────────────────────────────────────────────────── photo placeholder
- * For the demo: a cream-tinted frame with a tiny tracked label inside.
- * In production this becomes <img src=...> — same dimensions, no frame.
- */
+/* ─────────────────────────────────────────────────────── photo placeholder */
 
 .photo {
   background: #DCD2BD;
@@ -118,12 +132,4 @@ html, body {
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(31, 32, 36, 0.55);
-}
-
-.caption {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 9.5pt;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
 }
