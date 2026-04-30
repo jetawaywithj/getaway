@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · Amalfi Coast — Le Sirenuse</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>
+  .lodging {
+    padding: 0.75in 1in 0.7in;
+  }
+
+  .running-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.35in;
+  }
+  .running-head .left {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .running-head .right {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 9.5pt;
+    color: var(--ink-mute);
+  }
+
+  .lodging-photo {
+    width: 6.5in;
+    height: 3.4in;
+  }
+  .lodging-photo-caption {
+    margin-top: 0.14in;
+    text-align: left;
+  }
+
+  .lodging-title {
+    margin-top: 0.42in;
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 44pt;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .lodging-tagline {
+    margin-top: 0.14in;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--ink-soft);
+    max-width: 4.5in;
+  }
+
+  .lodging-grid {
+    margin-top: 0.4in;
+    display: grid;
+    grid-template-columns: 3.5in 1in 2in;
+    column-gap: 0;
+    align-items: start;
+  }
+
+  .lodging-narrative {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .lodging-narrative p + p { margin-top: 0.12in; }
+
+  .lodging-details {
+    grid-column: 3;
+  }
+  .detail-row {
+    padding: 8pt 0;
+    border-top: 0.5px solid rgba(31, 32, 36, 0.18);
+  }
+  .detail-row:last-child {
+    border-bottom: 0.5px solid rgba(31, 32, 36, 0.18);
+  }
+  .detail-label {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 3pt;
+  }
+  .detail-value {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .folio {
+    margin-top: 0.3in;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+</style>
+</head>
+<body>
+<section class="page lodging">
+
+  <header class="running-head">
+    <span class="left">JET · Joanna Elizabeth Travel</span>
+    <span class="right">The Garner Family · Amalfi Coast</span>
+  </header>
+
+  <div>
+    <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
+    <div class="caption lodging-photo-caption">The cliffside frontage at sunset</div>
+  </div>
+
+  <h2 class="lodging-title">Le Sirenuse</h2>
+  <div class="lodging-tagline">A Sersale family villa overlooking the Tyrrhenian since 1951.</div>
+
+  <div class="lodging-grid">
+    <div class="lodging-narrative">
+      <p>Set into the cliffs of Positano, Le Sirenuse has remained quietly the
+      finest address on the coast for three generations. Sixty-three rooms
+      and suites are spread across the original villa's ochre façade, each
+      dressed in hand-painted Vietri tiles and Sersale family antiques.</p>
+      <p>The Champagne &amp; Oyster bar opens to the sea at sunset; <em>La Sponda</em>
+      — the only Michelin-starred restaurant in Positano — is set with a
+      thousand candles each evening. Mornings begin with espresso on the
+      terrace and the church bell of Santa Maria below.</p>
+    </div>
+
+    <div></div>
+
+    <div class="lodging-details">
+      <div class="detail-row">
+        <div class="detail-label">Check-in</div>
+        <div class="detail-value">14 June, 4:00 PM</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Check-out</div>
+        <div class="detail-value">18 June, 11:00 AM</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Suite</div>
+        <div class="detail-value">Junior Suite,<br>sea-view terrace</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Reserved by</div>
+        <div class="detail-value">Joanna Elizabeth</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="folio">
+    <span>Lodging · Positano</span>
+    <span>04</span>
+  </footer>
+
+</section>
+</body>
+</html>

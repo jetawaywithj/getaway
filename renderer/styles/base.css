@@ -1,0 +1,129 @@
+/* JET — Joanna Elizabeth Travel · base typography & layout primitives
+ * Type system: Inter Display (display sans), EB Garamond (body serif),
+ *              Dancing Script (signature), Inter (labels).
+ * Page: US Letter portrait, full-bleed CSS @page, no print margins —
+ *       margins are part of the layout, not the print frame.
+ */
+
+@page {
+  size: 8.5in 11in;
+  margin: 0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 8.5in;
+  height: 11in;
+  background: #F5EFE6;        /* cream paper */
+  color: #1F2024;             /* deep ink */
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+:root {
+  --ink: #1F2024;
+  --ink-soft: #4A4A4F;
+  --ink-mute: #8A8A90;
+  --paper: #F5EFE6;
+  --paper-warm: #EFE6D8;
+  --rule: #1F2024;
+
+  --font-display: 'Inter Display', 'Inter', sans-serif;
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-script: 'Dancing Script', cursive;
+  --font-label: 'Inter', sans-serif;
+}
+
+.page {
+  position: relative;
+  width: 8.5in;
+  height: 11in;
+  page-break-after: always;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────── type primitives */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 200;            /* Inter Display Thin/ExtraLight */
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11.5pt;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.italic {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.label {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 7.5pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.label-soft { color: var(--ink-mute); }
+
+.hairline {
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+  opacity: 0.85;
+}
+
+/* ─────────────────────────────────────────────────────── photo placeholder
+ * For the demo: a cream-tinted frame with a tiny tracked label inside.
+ * In production this becomes <img src=...> — same dimensions, no frame.
+ */
+
+.photo {
+  background: #DCD2BD;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo::before {
+  content: attr(data-caption);
+  font-family: var(--font-label);
+  font-size: 6.5pt;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(31, 32, 36, 0.55);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
