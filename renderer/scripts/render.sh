@@ -43,7 +43,7 @@ render_one() {
 if [[ $# -gt 0 ]]; then
   render_one "$1"
 else
-  for tpl in templates/cover.html templates/cover-serif.html templates/lodging.html; do
+  for tpl in templates/cover.html templates/overview.html templates/day.html templates/lodging.html; do
     cd "$ROOT" && render_one "$tpl"
   done
 fi

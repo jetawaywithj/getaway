@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · Amalfi Coast — Day 01</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>
+  .day {
+    padding: 1in 1in 0.9in;
+    text-align: center;
+  }
+
+  .day-label {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.36em;
+    text-indent: 0.36em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .day-title {
+    margin-top: 0.16in;
+    font-family: var(--font-display);
+    font-weight: 100;
+    font-size: 42pt;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .day-photo-wrap {
+    margin-top: 0.55in;
+    display: grid;
+    place-items: center;
+  }
+  .day-photo {
+    width: 5.6in;
+    height: 3.2in;
+  }
+
+  .day-intro {
+    margin: 0.42in auto 0;
+    font-family: 'Cormorant Garamond', var(--font-body);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14pt;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    max-width: 5in;
+  }
+
+  .schedule {
+    margin: 0.55in auto 0;
+    max-width: 4.6in;
+    list-style: none;
+    text-align: left;
+  }
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 1.1in 1fr;
+    align-items: baseline;
+    padding: 10pt 0;
+    border-top: 0.5px solid rgba(31, 32, 36, 0.18);
+  }
+  .schedule-row:last-child {
+    border-bottom: 0.5px solid rgba(31, 32, 36, 0.18);
+  }
+  .schedule-row .time {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .schedule-row .event {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .schedule-row .event em {
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .folio {
+    position: absolute;
+    bottom: 0.6in;
+    right: 1in;
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+</style>
+</head>
+<body>
+<section class="page day">
+
+  <div class="day-label">Day 01 · Saturday 14 June</div>
+  <h1 class="day-title">Arrival in Positano</h1>
+
+  <div class="day-photo-wrap">
+    <div class="photo day-photo" data-caption="DESTINATION PHOTOGRAPH"></div>
+  </div>
+
+  <p class="day-intro">From Naples, a private transfer winds south along the cliffs to Le Sirenuse, where a chilled bottle of Franciacorta waits on your terrace before dinner at La Sponda.</p>
+
+  <ol class="schedule">
+    <li class="schedule-row">
+      <span class="time">2:00 pm</span>
+      <span class="event">Arrival · Naples Capodichino <em>(NAP)</em></span>
+    </li>
+    <li class="schedule-row">
+      <span class="time">2:45 pm</span>
+      <span class="event">Private transfer to Positano <em>· 75 min</em></span>
+    </li>
+    <li class="schedule-row">
+      <span class="time">4:00 pm</span>
+      <span class="event">Check-in · Le Sirenuse</span>
+    </li>
+    <li class="schedule-row">
+      <span class="time">7:30 pm</span>
+      <span class="event">Aperitivo · Champagne &amp; Oyster Bar</span>
+    </li>
+    <li class="schedule-row">
+      <span class="time">8:30 pm</span>
+      <span class="event">Dinner · La Sponda <em>· chef's tasting</em></span>
+    </li>
+  </ol>
+
+  <div class="folio">03</div>
+
+</section>
+</body>
+</html>
