@@ -6,78 +6,49 @@
 <link rel="stylesheet" href="../styles/base.css">
 <style>
   .lodging {
-    padding: 0.75in 1in 0.7in;
-  }
-
-  .running-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 0.35in;
-  }
-  .running-head .left {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7.5pt;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .running-head .right {
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 9.5pt;
-    color: var(--ink-mute);
+    padding: 1in 1in 0.9in;
   }
 
   .lodging-photo {
     width: 6.5in;
-    height: 3.4in;
-  }
-  .lodging-photo-caption {
-    margin-top: 0.14in;
-    text-align: left;
+    height: 3.6in;
   }
 
   .lodging-title {
-    margin-top: 0.42in;
+    margin-top: 0.55in;
     font-family: var(--font-display);
     font-weight: 100;
-    font-size: 44pt;
+    font-size: 46pt;
     letter-spacing: 0.02em;
     line-height: 1;
     color: var(--ink);
   }
   .lodging-tagline {
-    margin-top: 0.14in;
+    margin-top: 0.16in;
     font-family: var(--font-body);
     font-style: italic;
-    font-size: 12pt;
+    font-size: 13pt;
     color: var(--ink-soft);
     max-width: 4.5in;
   }
 
   .lodging-grid {
-    margin-top: 0.4in;
+    margin-top: 0.5in;
     display: grid;
-    grid-template-columns: 3.5in 1in 2in;
-    column-gap: 0;
+    grid-template-columns: 3.6in 1in 1.9in;
     align-items: start;
   }
 
   .lodging-narrative {
     font-family: var(--font-body);
-    font-size: 11pt;
-    line-height: 1.55;
+    font-size: 11.5pt;
+    line-height: 1.6;
     color: var(--ink);
   }
-  .lodging-narrative p + p { margin-top: 0.12in; }
 
-  .lodging-details {
-    grid-column: 3;
-  }
+  .lodging-details { grid-column: 3; }
   .detail-row {
-    padding: 8pt 0;
+    padding: 9pt 0;
     border-top: 0.5px solid rgba(31, 32, 36, 0.18);
   }
   .detail-row:last-child {
@@ -100,10 +71,9 @@
   }
 
   .folio {
-    margin-top: 0.3in;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    position: absolute;
+    bottom: 0.6in;
+    right: 1in;
     font-family: var(--font-label);
     font-weight: 500;
     font-size: 7pt;
@@ -116,29 +86,17 @@
 <body>
 <section class="page lodging">
 
-  <header class="running-head">
-    <span class="left">JET · Joanna Elizabeth Travel</span>
-    <span class="right">The Garner Family · Amalfi Coast</span>
-  </header>
-
-  <div>
-    <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
-    <div class="caption lodging-photo-caption">The cliffside frontage at sunset</div>
-  </div>
+  <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
 
   <h2 class="lodging-title">Le Sirenuse</h2>
   <div class="lodging-tagline">A Sersale family villa overlooking the Tyrrhenian since 1951.</div>
 
   <div class="lodging-grid">
     <div class="lodging-narrative">
-      <p>Set into the cliffs of Positano, Le Sirenuse has remained quietly the
-      finest address on the coast for three generations. Sixty-three rooms
-      and suites are spread across the original villa's ochre façade, each
-      dressed in hand-painted Vietri tiles and Sersale family antiques.</p>
-      <p>The Champagne &amp; Oyster bar opens to the sea at sunset; <em>La Sponda</em>
-      — the only Michelin-starred restaurant in Positano — is set with a
-      thousand candles each evening. Mornings begin with espresso on the
-      terrace and the church bell of Santa Maria below.</p>
+      Sixty-three rooms set into the cliffs of Positano, each dressed in
+      hand-painted Vietri tiles. The Champagne &amp; Oyster bar opens to
+      the sea at sunset; <em>La Sponda</em> — the only Michelin-starred
+      restaurant in town — is set with a thousand candles each evening.
     </div>
 
     <div></div>
@@ -156,17 +114,10 @@
         <div class="detail-label">Suite</div>
         <div class="detail-value">Junior Suite,<br>sea-view terrace</div>
       </div>
-      <div class="detail-row">
-        <div class="detail-label">Reserved by</div>
-        <div class="detail-value">Joanna Elizabeth</div>
-      </div>
     </div>
   </div>
 
-  <footer class="folio">
-    <span>Lodging · Positano</span>
-    <span>04</span>
-  </footer>
+  <div class="folio">04</div>
 
 </section>
 </body>
