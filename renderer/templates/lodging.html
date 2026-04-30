@@ -6,68 +6,53 @@
 <link rel="stylesheet" href="../styles/base.css">
 <style>
   .lodging {
-    padding: 1in 1in 0.9in;
+    padding: 1.1in 1in 0.9in;
+    text-align: center;
   }
 
+  .lodging-photo-wrap {
+    display: grid;
+    place-items: center;
+  }
   .lodging-photo {
-    width: 6.5in;
-    height: 3.6in;
+    width: 5in;
+    height: 3.2in;
   }
 
   .lodging-title {
-    margin-top: 0.55in;
+    margin-top: 0.7in;
     font-family: var(--font-display);
     font-weight: 100;
     font-size: 46pt;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     line-height: 1;
     color: var(--ink);
   }
+
   .lodging-tagline {
-    margin-top: 0.16in;
+    margin-top: 0.25in;
+    margin-left: auto;
+    margin-right: auto;
     font-family: var(--font-body);
     font-style: italic;
     font-size: 13pt;
     color: var(--ink-soft);
-    max-width: 4.5in;
+    max-width: 4.6in;
+    line-height: 1.45;
   }
 
-  .lodging-grid {
-    margin-top: 0.5in;
-    display: grid;
-    grid-template-columns: 3.6in 1in 1.9in;
-    align-items: start;
-  }
-
-  .lodging-narrative {
-    font-family: var(--font-body);
-    font-size: 11.5pt;
-    line-height: 1.6;
-    color: var(--ink);
-  }
-
-  .lodging-details { grid-column: 3; }
-  .detail-row {
-    padding: 9pt 0;
-    border-top: 0.5px solid rgba(31, 32, 36, 0.18);
-  }
-  .detail-row:last-child {
-    border-bottom: 0.5px solid rgba(31, 32, 36, 0.18);
-  }
-  .detail-label {
+  .lodging-details {
+    margin-top: 0.55in;
     font-family: var(--font-label);
     font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.28em;
+    font-size: 8pt;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 3pt;
-  }
-  .detail-value {
-    font-family: var(--font-body);
-    font-size: 11pt;
     color: var(--ink);
-    line-height: 1.35;
+    line-height: 1.9;
+  }
+  .lodging-details .soft {
+    color: var(--ink-mute);
   }
 
   .folio {
@@ -86,35 +71,19 @@
 <body>
 <section class="page lodging">
 
-  <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
+  <div class="lodging-photo-wrap">
+    <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
+  </div>
 
   <h2 class="lodging-title">Le Sirenuse</h2>
-  <div class="lodging-tagline">A Sersale family villa overlooking the Tyrrhenian since 1951.</div>
 
-  <div class="lodging-grid">
-    <div class="lodging-narrative">
-      Sixty-three rooms set into the cliffs of Positano, each dressed in
-      hand-painted Vietri tiles. The Champagne &amp; Oyster bar opens to
-      the sea at sunset; <em>La Sponda</em> — the only Michelin-starred
-      restaurant in town — is set with a thousand candles each evening.
-    </div>
+  <div class="lodging-tagline">
+    A Sersale family villa overlooking the Tyrrhenian since 1951.
+  </div>
 
-    <div></div>
-
-    <div class="lodging-details">
-      <div class="detail-row">
-        <div class="detail-label">Check-in</div>
-        <div class="detail-value">14 June, 4:00 PM</div>
-      </div>
-      <div class="detail-row">
-        <div class="detail-label">Check-out</div>
-        <div class="detail-value">18 June, 11:00 AM</div>
-      </div>
-      <div class="detail-row">
-        <div class="detail-label">Suite</div>
-        <div class="detail-value">Junior Suite,<br>sea-view terrace</div>
-      </div>
-    </div>
+  <div class="lodging-details">
+    Junior Suite &nbsp;·&nbsp; Sea-view terrace<br>
+    <span class="soft">14 — 18 June 2026</span>
   </div>
 
   <div class="folio">04</div>
