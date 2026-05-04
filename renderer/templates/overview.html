@@ -5,9 +5,9 @@
 <title>JET · Your Trip — At a Glance</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
-  .overview { padding: 1.0in 1.1in 1.1in; }
+  .overview { padding: 0.95in 1.0in 1.0in; }
 
-  .overview-eyebrow {
+  .ov-eyebrow {
     font-family: var(--font-label);
     font-weight: 500;
     font-size: 7.5pt;
@@ -17,8 +17,8 @@
     color: var(--accent);
   }
 
-  .overview-title {
-    margin-top: 0.18in;
+  .ov-title {
+    margin-top: 0.16in;
     font-family: var(--font-display);
     font-weight: 400;
     font-size: 46pt;
@@ -27,81 +27,201 @@
     color: var(--ink);
   }
 
-  .grid {
-    margin-top: 0.55in;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.18in;
+  .ov-summary {
+    margin-top: 0.25in;
+    font-family: var(--font-body);
+    font-size: 12pt;
+    color: var(--ink);
+    line-height: 1.55;
+    max-width: 6.4in;
+  }
+  .ov-summary .who {
+    font-weight: 500;
+  }
+  .ov-summary .where {
+    font-family: var(--font-script);
+    color: var(--accent);
+    font-size: 22pt;
+    line-height: 1;
+    display: block;
+    margin-top: 6pt;
   }
 
-  .card {
-    background: var(--card);
-    padding: 0.32in 0.36in;
-    min-height: 1.7in;
+  .ov-rule {
+    margin-top: 0.32in;
+    height: 0.5px;
+    background: var(--hairline);
   }
 
-  .card-label {
+  .ov-section {
+    margin-top: 0.32in;
+  }
+
+  .ov-section-label {
     font-family: var(--font-label);
     font-weight: 500;
-    font-size: 8pt;
-    letter-spacing: 0.30em;
+    font-size: 7pt;
+    letter-spacing: 0.34em;
     text-transform: uppercase;
     color: var(--accent);
   }
 
-  .card-head {
-    margin-top: 14pt;
+  .ov-section-head {
+    margin-top: 6pt;
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 18pt;
-    line-height: 1.18;
+    font-size: 22pt;
+    line-height: 1.1;
     color: var(--ink);
   }
 
-  .card-sub {
-    margin-top: 8pt;
+  .leg-grid {
+    margin-top: 14pt;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.20in 0.32in;
+  }
+  .leg {
+    background: var(--card);
+    padding: 0.20in 0.24in;
+  }
+  .leg-label {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 6.5pt;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .leg-day {
+    margin-top: 4pt;
     font-family: var(--font-body);
-    font-size: 10pt;
+    font-style: italic;
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+  }
+  .leg-flights {
+    margin-top: 8pt;
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: 10.5pt;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .leg-flights li {
+    padding: 3pt 0;
+  }
+  .leg-conf {
+    margin-top: 6pt;
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 6.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .hotel-row {
+    margin-top: 14pt;
+    background: var(--card);
+    padding: 0.22in 0.28in;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.32in;
+    align-items: start;
+  }
+  .hotel-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 18pt;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .hotel-meta {
+    margin-top: 6pt;
+    font-family: var(--font-body);
+    font-size: 10.5pt;
     color: var(--ink-soft);
     line-height: 1.45;
+  }
+  .hotel-side {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: right;
+    line-height: 1.7;
+  }
+  .hotel-side .conf { color: var(--ink); }
+
+  .highlights {
+    margin-top: 0.30in;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 12.5pt;
+    color: var(--ink);
+    line-height: 1.5;
+    max-width: 6.4in;
   }
 </style>
 </head>
 <body>
 <section class="page overview">
-  <div class="overview-eyebrow">Your Trip</div>
-  <h1 class="overview-title">At a Glance</h1>
+  <div class="ov-eyebrow">Your Trip</div>
+  <h1 class="ov-title">At a Glance</h1>
 
-  <div class="grid">
-    <div class="card">
-      <div class="card-label">Travelers</div>
-      <div class="card-head">Jennifer Hunter-Yates &amp;<br>Philip Yates</div>
-      <div class="card-sub">2 guests</div>
+  <p class="ov-summary">
+    <span class="who">Jennifer Hunter-Yates &amp; Philip Yates</span> · 2 guests · 5 nights, May 1 — 6, 2026
+    <span class="where">Saint Barthélemy</span>
+  </p>
+
+  <div class="ov-rule"></div>
+
+  <div class="ov-section">
+    <div class="ov-section-label">Flights</div>
+    <div class="ov-section-head">Two stops, both ways</div>
+
+    <div class="leg-grid">
+      <div class="leg">
+        <div class="leg-label">Outbound</div>
+        <div class="leg-day">Friday, May 1</div>
+        <ul class="leg-flights">
+          <li><strong>6:30 AM</strong> · JetBlue 1803 · JFK → SJU · arrives 10:19 AM AST</li>
+          <li><strong>11:50 AM</strong> · Tradewind 172 · SJU → SBH · arrives 12:57 PM</li>
+        </ul>
+        <div class="leg-conf">Conf · URYEAD (JetBlue) · TJRDBU (Tradewind)</div>
+      </div>
+      <div class="leg">
+        <div class="leg-label">Return</div>
+        <div class="leg-day">Wednesday, May 6</div>
+        <ul class="leg-flights">
+          <li><strong>11:20 AM</strong> · Tradewind 123 · SBH → SJU · arrives 12:25 PM</li>
+          <li><strong>4:55 PM</strong> · JetBlue 2602 · SJU → HPN · arrives 9:00 PM EDT</li>
+        </ul>
+        <div class="leg-conf">Conf · TJRDBU · URYEAD</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-label">Dates</div>
-      <div class="card-head">May 1 to May 6, 2026</div>
-      <div class="card-sub">5 nights, 6 days</div>
+  </div>
+
+  <div class="ov-section">
+    <div class="ov-section-label">Hotel</div>
+    <div class="hotel-row">
+      <div>
+        <div class="hotel-name">Fouquet's Saint-Barth</div>
+        <div class="hotel-meta">Prestige Suite, Pool &amp; Sea View · Lurin · Five nights, May 1 — 6</div>
+      </div>
+      <div class="hotel-side">
+        Confirmation<br>
+        <span class="conf">V-25256</span>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-label">Stay</div>
-      <div class="card-head">Fouquet's Saint-Barth</div>
-      <div class="card-sub">Prestige Suite, Pool &amp; Sea View<br>Confirmation V-25256</div>
-    </div>
-    <div class="card">
-      <div class="card-label">Arrival</div>
-      <div class="card-head">Friday, May 1 at 12:57 PM</div>
-      <div class="card-sub">SBH via Tradewind 172 from San Juan</div>
-    </div>
-    <div class="card">
-      <div class="card-label">Departure</div>
-      <div class="card-head">Wednesday, May 6 at 11:20 AM</div>
-      <div class="card-sub">SBH via Tradewind 123 to San Juan</div>
-    </div>
-    <div class="card">
-      <div class="card-label">The Highlights</div>
-      <div class="card-head" style="font-size: 14pt; line-height: 1.4;">Beach club lunches, a full day at sea, the Bagatelle White Party, and five unforgettable dinners</div>
-    </div>
+  </div>
+
+  <div class="ov-section">
+    <div class="ov-section-label">Highlights</div>
+    <p class="highlights">Beach club lunches at La Guérite, Nao &amp; Gypsea · a full day at sea aboard a private Axopar 37 · Bagatelle's iconic Saturday White Party · five unforgettable dinners.</p>
   </div>
 
   <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
