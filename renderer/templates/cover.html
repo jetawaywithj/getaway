@@ -2,93 +2,90 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Amalfi Coast — Cover</title>
+<title>JET · A Birthday Celebration for Jennifer & Philip — Cover</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
-  .cover {
-    padding: 0.85in 1in 0.9in;
+  body { background: var(--paper-soft); }
+
+  .cover-photo {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6.4in;
+    background: #DCD2BD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover-photo::before {
+    content: 'HERO PHOTOGRAPH · SAINT-JEAN BAY';
+    font-family: var(--font-label);
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(31, 54, 65, 0.45);
   }
 
-  .cover-mark {
+  .cover-block {
+    position: absolute;
+    top: 6.4in;
+    left: 0; right: 0;
+    bottom: 0;
+    padding: 0.7in 1in 0.85in;
     text-align: center;
+    background: var(--paper-soft);
   }
-  .cover-mark .jet {
-    font-family: var(--font-display);
-    font-weight: 300;
-    font-size: 16pt;
+
+  .brand-mark {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
     letter-spacing: 0.42em;
     text-indent: 0.42em;
-    color: var(--ink);
-  }
-  .cover-mark .name {
-    margin-top: 8pt;
-    font-family: var(--font-label);
-    font-weight: 400;
-    font-size: 7pt;
-    letter-spacing: 0.36em;
-    text-indent: 0.36em;
     text-transform: uppercase;
     color: var(--ink-mute);
   }
 
-  .cover-photo-wrap {
-    margin-top: 0.55in;
-    display: grid;
-    place-items: center;
-  }
-  .cover-photo {
-    width: 4.2in;
-    height: 4.9in;
+  .cover-title {
+    margin-top: 0.32in;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 26pt;
+    line-height: 1.18;
+    color: var(--ink);
+    letter-spacing: 0.005em;
   }
 
-  .cover-title-block {
-    text-align: center;
-    margin-top: 0.7in;
-  }
-  .cover-title {
-    font-family: var(--font-display);
-    font-weight: 100;
-    font-size: 52pt;
+  .cover-destination {
+    margin-top: 0.15in;
+    font-family: var(--font-script);
+    color: var(--accent);
+    font-size: 56pt;
     line-height: 1;
-    letter-spacing: 0.04em;
-    color: var(--ink);
+    letter-spacing: -0.005em;
   }
-  .cover-meta {
-    margin-top: 0.42in;
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 14pt;
-    color: var(--ink);
-  }
+
   .cover-dates {
-    margin-top: 0.18in;
+    margin-top: 0.42in;
     font-family: var(--font-label);
     font-weight: 500;
     font-size: 8pt;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: var(--ink-soft);
   }
 </style>
 </head>
 <body>
-<section class="page cover">
-
-  <header class="cover-mark">
-    <div class="jet">JET</div>
-    <div class="name">Joanna Elizabeth Travel</div>
-  </header>
-
-  <div class="cover-photo-wrap">
-    <div class="photo cover-photo" data-caption="HERO PHOTOGRAPH"></div>
+<section class="page">
+  <div class="cover-photo"></div>
+  <div class="cover-block">
+    <div class="brand-mark">JET · Joanna Elizabeth Travel</div>
+    <h1 class="cover-title">A Birthday Celebration for<br>Jennifer &amp; Philip</h1>
+    <div class="cover-destination">Saint Barthélemy</div>
+    <div class="cover-dates">Friday, May 1 — Wednesday, May 6, 2026</div>
   </div>
-
-  <div class="cover-title-block">
-    <h1 class="cover-title">Amalfi Coast</h1>
-    <div class="cover-meta">The Garner Family</div>
-    <div class="cover-dates">14 — 22 June 2026</div>
-  </div>
-
 </section>
 </body>
 </html>

@@ -2,126 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Amalfi Coast — At a Glance</title>
+<title>JET · Your Trip — At a Glance</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
-  .overview {
-    padding: 1.4in 1in 1in;
-    text-align: center;
-  }
+  .overview { padding: 1.0in 1.1in 1.1in; }
 
-  .overview-label {
+  .overview-eyebrow {
     font-family: var(--font-label);
     font-weight: 500;
     font-size: 7.5pt;
     letter-spacing: 0.36em;
     text-indent: 0.36em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: var(--accent);
   }
 
-  .overview-arc {
-    margin-top: 0.32in;
-    font-family: 'Cormorant Garamond', var(--font-body);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 24pt;
-    line-height: 1.25;
-    color: var(--ink);
-    max-width: 5.4in;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .overview-cities {
-    margin-top: 0.85in;
+  .overview-title {
+    margin-top: 0.18in;
     font-family: var(--font-display);
-    font-weight: 100;
-    font-size: 28pt;
-    letter-spacing: 0.18em;
-    text-indent: 0.18em;
+    font-weight: 400;
+    font-size: 46pt;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
     color: var(--ink);
   }
-  .overview-cities .sep {
-    color: var(--ink-mute);
-    margin: 0 0.08em;
-  }
 
-  .overview-grid {
-    margin: 0.85in auto 0;
-    max-width: 4.4in;
-    text-align: left;
-  }
-  .overview-row {
+  .grid {
+    margin-top: 0.55in;
     display: grid;
-    grid-template-columns: 1.5in 1fr;
-    align-items: baseline;
-    padding: 11pt 0;
-    border-top: 0.5px solid rgba(31, 32, 36, 0.18);
-  }
-  .overview-row:last-child {
-    border-bottom: 0.5px solid rgba(31, 32, 36, 0.18);
-  }
-  .overview-row .k {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .overview-row .v {
-    font-family: var(--font-body);
-    font-size: 11pt;
-    color: var(--ink);
-    line-height: 1.4;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.18in;
   }
 
-  .folio {
-    position: absolute;
-    bottom: 0.6in;
-    right: 1in;
+  .card {
+    background: var(--card);
+    padding: 0.32in 0.36in;
+    min-height: 1.7in;
+  }
+
+  .card-label {
     font-family: var(--font-label);
     font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.32em;
+    font-size: 8pt;
+    letter-spacing: 0.30em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: var(--accent);
+  }
+
+  .card-head {
+    margin-top: 14pt;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 18pt;
+    line-height: 1.18;
+    color: var(--ink);
+  }
+
+  .card-sub {
+    margin-top: 8pt;
+    font-family: var(--font-body);
+    font-size: 10pt;
+    color: var(--ink-soft);
+    line-height: 1.45;
   }
 </style>
 </head>
 <body>
 <section class="page overview">
+  <div class="overview-eyebrow">Your Trip</div>
+  <h1 class="overview-title">At a Glance</h1>
 
-  <div class="overview-label">At a glance</div>
-
-  <p class="overview-arc">Eight days along the Tyrrhenian — from Positano's cliffs to Capri's grottos to Ravello's gardens, threaded together by private boat and chauffeured car.</p>
-
-  <div class="overview-cities">
-    POSITANO<span class="sep">·</span>CAPRI<span class="sep">·</span>RAVELLO
+  <div class="grid">
+    <div class="card">
+      <div class="card-label">Travelers</div>
+      <div class="card-head">Jennifer Hunter-Yates &amp;<br>Philip Yates</div>
+      <div class="card-sub">2 guests</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Dates</div>
+      <div class="card-head">May 1 to May 6, 2026</div>
+      <div class="card-sub">5 nights, 6 days</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Stay</div>
+      <div class="card-head">Fouquet's Saint-Barth</div>
+      <div class="card-sub">Prestige Suite, Pool &amp; Sea View<br>Confirmation V-25256</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Arrival</div>
+      <div class="card-head">Friday, May 1 at 12:57 PM</div>
+      <div class="card-sub">SBH via Tradewind 172 from San Juan</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Departure</div>
+      <div class="card-head">Wednesday, May 6 at 11:20 AM</div>
+      <div class="card-sub">SBH via Tradewind 123 to San Juan</div>
+    </div>
+    <div class="card">
+      <div class="card-label">The Highlights</div>
+      <div class="card-head" style="font-size: 14pt; line-height: 1.4;">Beach club lunches, a full day at sea, the Bagatelle White Party, and five unforgettable dinners</div>
+    </div>
   </div>
 
-  <div class="overview-grid">
-    <div class="overview-row">
-      <div class="k">Dates</div>
-      <div class="v">14 — 22 June 2026</div>
-    </div>
-    <div class="overview-row">
-      <div class="k">Travelers</div>
-      <div class="v">The Garner Family · 4</div>
-    </div>
-    <div class="overview-row">
-      <div class="k">Properties</div>
-      <div class="v">Le Sirenuse · Capri Palace · Caruso</div>
-    </div>
-    <div class="overview-row">
-      <div class="k">Pace</div>
-      <div class="v">Five hotels, four Michelin meals — unhurried.</div>
-    </div>
-  </div>
-
-  <div class="folio">02</div>
-
+  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
 </section>
 </body>
 </html>

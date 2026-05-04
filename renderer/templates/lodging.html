@@ -2,93 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Amalfi Coast — Le Sirenuse</title>
+<title>JET · Your Home for the Week — Fouquet's Saint-Barth</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
-  .lodging {
-    padding: 1.1in 1in 0.9in;
-    text-align: center;
+  .lodging { padding: 1.0in 1.1in 1.0in; }
+
+  .lodging-eyebrow {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.36em;
+    text-indent: 0.36em;
+    text-transform: uppercase;
+    color: var(--accent);
   }
 
-  .lodging-photo-wrap {
-    display: grid;
-    place-items: center;
-  }
-  .lodging-photo {
-    width: 5in;
-    height: 3.2in;
-  }
-
-  .lodging-title {
-    margin-top: 0.7in;
+  .lodging-name {
+    margin-top: 0.18in;
     font-family: var(--font-display);
-    font-weight: 100;
-    font-size: 46pt;
-    letter-spacing: 0.04em;
-    line-height: 1;
-    color: var(--ink);
-  }
-
-  .lodging-tagline {
-    margin-top: 0.25in;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Cormorant Garamond', var(--font-body);
-    font-style: italic;
     font-weight: 400;
-    font-size: 14pt;
-    color: var(--ink-soft);
-    max-width: 4.6in;
-    line-height: 1.45;
-  }
-
-  .lodging-details {
-    margin-top: 0.55in;
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 8pt;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
+    font-size: 38pt;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
     color: var(--ink);
-    line-height: 1.9;
-  }
-  .lodging-details .soft {
-    color: var(--ink-mute);
   }
 
-  .folio {
-    position: absolute;
-    bottom: 0.6in;
-    right: 1in;
+  .lodging-desc {
+    margin-top: 0.30in;
+    font-family: var(--font-body);
+    font-size: 11.5pt;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 6.4in;
+  }
+
+  .lodging-grid {
+    margin-top: 0.55in;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.20in 0.34in;
+  }
+
+  .block-label {
     font-family: var(--font-label);
     font-weight: 500;
-    font-size: 7pt;
+    font-size: 7.5pt;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: var(--accent);
+    margin-bottom: 12pt;
+  }
+
+  .block-list {
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .block-list li {
+    padding-left: 14pt;
+    position: relative;
+    margin-bottom: 5pt;
+  }
+  .block-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 8pt;
+    top: 1pt;
+  }
+
+  .block-list .soft { color: var(--ink-soft); }
+
+  .virtuoso-block {
+    margin-top: 0.35in;
+    grid-column: 1 / 2;
+  }
+  .contacts-block {
+    margin-top: 0.35in;
+    grid-column: 2 / 3;
   }
 </style>
 </head>
 <body>
 <section class="page lodging">
+  <div class="lodging-eyebrow">Your Home for the Week</div>
+  <h1 class="lodging-name">Fouquet's Saint-Barth</h1>
 
-  <div class="lodging-photo-wrap">
-    <div class="photo lodging-photo" data-caption="PROPERTY PHOTOGRAPH"></div>
+  <p class="lodging-desc">A historic address tucked into the hillside above Lurin, with sweeping views of the Caribbean and the harbor. Reimagined by Gilles &amp; Boissier and reopened as one of the island's most beautifully designed properties, Fouquet's offers an elegant colonial feel with a fresh, intimate sensibility.</p>
+
+  <div class="lodging-grid">
+    <div>
+      <div class="block-label">Your Suite</div>
+      <ul class="block-list">
+        <li>Prestige Suite, Pool &amp; Sea View</li>
+        <li>Five nights, May 1 to May 6</li>
+        <li>Confirmation V-25256</li>
+        <li>Check-in 3:00 PM · Check-out 12:00 noon</li>
+        <li>Pre-paid in full · Incidentals settled at check-out</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="block-label">Hotel Inclusions</div>
+      <ul class="block-list">
+        <li>Daily breakfast buffet, in the dining room or in-suite</li>
+        <li>Loungers at La Guérite Beach Club (reservations required)</li>
+        <li>A selection of items in your minibar</li>
+        <li>Complimentary Wi-Fi throughout the property</li>
+      </ul>
+    </div>
+
+    <div class="virtuoso-block">
+      <div class="block-label">Your Virtuoso Amenities · via Fora</div>
+      <ul class="block-list">
+        <li>$100 USD equivalent food &amp; beverage credit, to be used during your stay (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
+      </ul>
+    </div>
+
+    <div class="contacts-block">
+      <div class="block-label">Hotel Contacts</div>
+      <ul class="block-list">
+        <li>+590 590 297 900</li>
+        <li>General Manager: Enrique Gluckman</li>
+        <li>Reservations Supervisor: Nelly Mehdizadeh</li>
+        <li>Concierge: concierge-stbarth@fouquets.com</li>
+      </ul>
+    </div>
   </div>
 
-  <h2 class="lodging-title">Le Sirenuse</h2>
-
-  <div class="lodging-tagline">
-    A Sersale family villa overlooking the Tyrrhenian since 1951.
-  </div>
-
-  <div class="lodging-details">
-    Junior Suite &nbsp;·&nbsp; Sea-view terrace<br>
-    <span class="soft">14 — 18 June 2026</span>
-  </div>
-
-  <div class="folio">04</div>
-
+  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
 </section>
 </body>
 </html>

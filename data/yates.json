@@ -1,0 +1,350 @@
+{
+  "$schema": "trip.v1",
+  "slug": "yates-st-barths-may-2026",
+  "title": "A Birthday Celebration for Jennifer & Philip",
+  "destination": "Saint Barthélemy",
+  "dates_label": "Friday, May 1 — Wednesday, May 6, 2026",
+  "footer": "Jennifer & Philip · Saint Barthélemy · May 2026",
+  "travelers": {
+    "primary": "Jennifer Hunter-Yates & Philip Yates",
+    "guest_count": 2
+  },
+  "summary": {
+    "dates": "May 1 to May 6, 2026",
+    "duration": "5 nights, 6 days",
+    "stay": {
+      "name": "Fouquet's Saint-Barth",
+      "room": "Prestige Suite, Pool & Sea View",
+      "confirmation": "V-25256"
+    },
+    "arrival": {
+      "label": "Friday, May 1 at 12:57 PM",
+      "via": "SBH via Tradewind 172 from San Juan"
+    },
+    "departure": {
+      "label": "Wednesday, May 6 at 11:20 AM",
+      "via": "SBH via Tradewind 123 to San Juan"
+    },
+    "highlights": "Beach club lunches, a full day at sea, the Bagatelle White Party, and five unforgettable dinners"
+  },
+  "note_from_advisor": {
+    "salutation": "Welcome to St. Barths!",
+    "body": [
+      "Jennifer and Philip, you are going to have the best time!",
+      "I can't think of anywhere more fun to celebrate a momentous birthday, and hopefully the first of many trips back!",
+      "Fouquet's is one of my favorites, especially for your first stay. The hillside setting, the views, the in-town location, such a good home base! A hotel rep will meet you at SBH on arrival, and from there, all you have to do is enjoy it.",
+      "The week is all lined up: beach club lunches at La Guérite, Nao, and Gypsea, dinners at the hot spots (including Bagatelle's iconic White Party), and a full day on the water on your private Axopar. And we have your Moke lined up and ready to go as well!",
+      "Your reservations and boat day are confirmed and ready to go. The concierge there is lovely and will help you with any additional planning or questions you might have.",
+      "And of course, if anything comes up while you're away, I'm always just a text or email away. Bonus points if you want to send me a bunch of pictures and make me incredibly jealous.",
+      "Wishing you the most wonderful trip!"
+    ],
+    "sign_off": "Warmly,",
+    "signature": "Joanna"
+  },
+  "days": [
+    {
+      "n": "01",
+      "weekday": "Friday",
+      "date_label": "Friday, May 1",
+      "title": "Arrival in St. Barths",
+      "subtitle": "Travel day · welcome dinner in Gustavia",
+      "items": [
+        {
+          "time": "6:30 AM",
+          "tz_loc": "EDT · JFK",
+          "title": "JetBlue 1803 · JFK to San Juan",
+          "body": "Depart John F. Kennedy International at 6:30 AM EDT. Arrive Luis Muñoz Marín International (SJU) at 10:19 AM AST.",
+          "meta": "Confirmation: URYEAD"
+        },
+        {
+          "time": "11:50 AM",
+          "tz_loc": "AST · SJU",
+          "title": "Tradewind 172 · San Juan to St. Barths",
+          "badges": ["VIP EXPERIENCE"],
+          "body": "Tradewind Aviation flight TJ 172 from SJU to Gustaf III Airport (SBH). Arrive 12:57 PM AST. With VIP Experience, a member of the Tradewind team will meet you at your arriving gate and escort you through the airport to the Tradewind private lounge. If you have checked luggage, the team will retrieve and check it in for you.",
+          "meta": "Booking Reference: TJRDBU · Class: M · Luggage limit: 50 lb / 23 kg per person"
+        },
+        {
+          "time": "12:57 PM",
+          "tz_loc": "AST · SBH",
+          "title": "Touchdown in Saint Barthélemy",
+          "body": "A Fouquet's representative will be waiting for you at the airport to escort you to the hotel."
+        },
+        {
+          "time": "3:00 PM",
+          "tz_loc": "AST · LURIN",
+          "title": "Check-in at Fouquet's Saint-Barth",
+          "body": "Settle into your Prestige Suite Pool Sea View. Take the rest of the afternoon at the pool, in the suite, or wandering the property.",
+          "meta": "Address: Dit Lurin, Lieu, Saint Barthélemy · Hotel: +590 590 297 900"
+        },
+        {
+          "time": "8:15 PM",
+          "tz_loc": "GUSTAVIA",
+          "title": "Dinner at BONITO St. Barth",
+          "badges": ["CONFIRMED"],
+          "body": "Your welcome dinner at one of Gustavia's most beloved restaurants. Modern Latin American cuisine, sweeping harbor views, and a buzzy, candlelit room. The table is held for two hours.",
+          "meta": "Address: 6 Rue Lubin Brin, Gustavia · Phone: +590 590 27 96 96 · Confirmation: 9P2AYT3PJPHH"
+        }
+      ]
+    },
+    {
+      "n": "02",
+      "weekday": "Saturday",
+      "date_label": "Saturday, May 2",
+      "title": "Beach Club Saturday & Bagatelle White Party",
+      "subtitle": "A long lunch on the sand · the island's most iconic Saturday night",
+      "items": [
+        {
+          "time": "Morning",
+          "tz_loc": "FOUQUET'S",
+          "title": "A leisurely start",
+          "body": "Breakfast at Fouquet's, in the dining room or served in your suite. Afterward, the pool, your private terrace, or a stroll on the property."
+        },
+        {
+          "time": "Morning",
+          "tz_loc": "FOUQUET'S",
+          "title": "Your Moke arrives",
+          "badges": ["HOTEL CONCIERGE"],
+          "body": "Your Moke rental will be dropped off at the hotel this morning, ready for you to pop down to Gustavia, the beaches, or anywhere on the island for the next four days. The concierge will hand over the keys."
+        },
+        {
+          "time": "10:30 AM",
+          "tz_loc": "LA GUÉRITE",
+          "title": "Sunbeds at La Guérite Beach",
+          "body": "Your Fouquet's loungers are available from 10:30 AM. Settle in for a sun-soaked morning before lunch."
+        },
+        {
+          "time": "2:45 PM",
+          "tz_loc": "LA GUÉRITE",
+          "title": "Lunch at La Guérite Beach",
+          "badges": ["CONFIRMED"],
+          "body": "Mediterranean menu, Greek-inspired flavors, perfect rosé, and the kind of beach lunch that easily turns into the whole afternoon."
+        },
+        {
+          "time": "9:45 PM",
+          "tz_loc": "BAGATELLE",
+          "title": "Bagatelle White Party",
+          "badges": ["CONFIRMED", "DRESS IN WHITE"],
+          "body": "The night St. Barths is most famous for. Your table is confirmed outside for the legendary Saturday White Party. Lively, glamorous, exactly the kind of night you tell stories about for years.",
+          "meta": "Minimum spend: €350 per person on wine and champagne · Dress code is all white."
+        }
+      ]
+    },
+    {
+      "n": "03",
+      "weekday": "Sunday",
+      "date_label": "Sunday, May 3",
+      "title": "Nao Beach & Le Beef Bar at Home",
+      "subtitle": "A barefoot Sunday with a quiet dinner steps from your suite",
+      "items": [
+        {
+          "time": "Morning",
+          "tz_loc": "FOUQUET'S",
+          "title": "Slow morning at the suite",
+          "body": "Breakfast in or out, the pool, or, if you are feeling adventurous, the concierge can arrange a paddleboard or short hike before the day warms up. Ask the concierge to call Nao first thing to request sunbeds for the afternoon."
+        },
+        {
+          "time": "2:30 PM",
+          "tz_loc": "SAINT-JEAN BAY",
+          "title": "Lunch at Nao Beach Club",
+          "badges": ["CONFIRMED"],
+          "body": "Sundays at Nao are one of the island's most legendary beach parties. The vibe builds from a chic, leisurely lunch into a full-blown Sunday afternoon scene, with the resident DJ taking the energy from chill to electric as the day goes on. Lively, glamorous, and exactly the kind of barefoot Caribbean Sunday you came for. The concierge will reach out in the morning to request sunbeds, though they cannot be guaranteed in advance."
+        },
+        {
+          "time": "9:00 PM",
+          "tz_loc": "IN THE HOTEL",
+          "title": "Dinner at Le Beef Bar",
+          "badges": ["CONFIRMED"],
+          "body": "Tonight's dinner is just steps from your suite at Fouquet's own Le Beef Bar. A perfect, lower-key Sunday after a sunny afternoon. World-class beef, an elegant room, and the easiest walk home of the week."
+        }
+      ]
+    },
+    {
+      "n": "04",
+      "weekday": "Monday",
+      "date_label": "Monday, May 4",
+      "title": "A Day At Sea Aboard the Axopar",
+      "subtitle": "Your private boat charter · the highlight of the week",
+      "items": [
+        {
+          "time": "10:00 AM",
+          "tz_loc": "GUSTAVIA",
+          "title": "Boarding at the Ferry Dock",
+          "body": "Drive your Moke down to Gustavia. The Fouquet's concierge will give you directions to find Jicky Marine. Boarding is at the Ferry Dock facing the Pharmacy on Rue de la République, where the Jicky dispatcher will meet you and walk you to the boat."
+        },
+        {
+          "time": "10:00 AM to 5:00 PM",
+          "tz_loc": "JICKY MARINE",
+          "title": "Full Day Charter · Axopar 37",
+          "badges": ["CONFIRMED"],
+          "body": "Your private Axopar 37 with crew for the full day. Picnic on board is included. Plan for snorkeling stops, a swim at Colombier or Île Fourchue, and lunch at anchor in a quiet cove.",
+          "meta": "Operator: Jicky Marine St. Barth · Confirmation: AXOPAR 37 · Email: info@jickymarine.com · Hotel concierge: concierge-stbarth@fouquets.com"
+        },
+        {
+          "time": "9:30 PM",
+          "tz_loc": "GUSTAVIA",
+          "title": "Sella · 1001 Nights",
+          "badges": ["CONFIRMED", "THEMED PARTY"],
+          "body": "Tonight is Sella's legendary 1001 Nights party. Chef Assaf Granit's Mediterranean and Jerusalem-inspired tasting menu paired with one of the most electric rooms on the island. Dinner transforms into a full nightlife moment as the resident DJ takes over and the room dances late into the night. A perfect, glamorous way to cap off your day at sea."
+        }
+      ]
+    },
+    {
+      "n": "05",
+      "weekday": "Tuesday",
+      "date_label": "Tuesday, May 5",
+      "title": "Gypsea & Isola",
+      "subtitle": "Your last full day · spent exactly the way it should be",
+      "items": [
+        {
+          "time": "Morning",
+          "tz_loc": "FOUQUET'S",
+          "title": "Reserve sunbeds at Gypsea",
+          "body": "Ask the concierge to call Gypsea first thing to lock in your sunbeds for the afternoon. The hotel handles this for you."
+        },
+        {
+          "time": "2:30 PM",
+          "tz_loc": "SAINT-JEAN",
+          "title": "Lunch at Gypsea Beach Club",
+          "badges": ["CONFIRMED"],
+          "body": "One of the newer, more design-forward additions to the island scene. A long, glamorous lunch right on Saint-Jean Bay with that signature aerial view of the Tradewind planes coming in."
+        },
+        {
+          "time": "9:30 PM",
+          "tz_loc": "GUSTAVIA",
+          "title": "Farewell dinner at Isola",
+          "badges": ["CONFIRMED"],
+          "body": "Coastal Italian, beautifully done. The pasta is exceptional, the room is intimate, and it is the perfect last-night dinner."
+        }
+      ]
+    },
+    {
+      "n": "06",
+      "weekday": "Wednesday",
+      "date_label": "Wednesday, May 6",
+      "title": "Departure Home",
+      "subtitle": "A morning swim, one last breakfast, and back to New York",
+      "items": [
+        {
+          "time": "Morning",
+          "tz_loc": "FOUQUET'S",
+          "title": "Moke pickup",
+          "badges": ["RENTAL COMPANY"],
+          "body": "The rental company will collect the Moke from the hotel this morning. Leave the keys with the concierge before you head to the airport."
+        },
+        {
+          "time": "~10:00 AM",
+          "tz_loc": "FOUQUET'S",
+          "title": "Hotel transfer to SBH",
+          "body": "The concierge will reconfirm the exact pickup timing 24 hours prior, but plan for around 10:00 AM. Settle any incidentals on the folio before you go."
+        },
+        {
+          "time": "11:20 AM",
+          "tz_loc": "AST · SBH",
+          "title": "Tradewind 123 · St. Barths to San Juan",
+          "body": "Arrive SJU at 12:25 PM AST.",
+          "meta": "Booking Reference: TJRDBU"
+        },
+        {
+          "time": "4:55 PM",
+          "tz_loc": "AST · SJU",
+          "title": "JetBlue 2602 · San Juan to Westchester",
+          "body": "Arrive HPN at 9:00 PM EDT. Welcome home!",
+          "meta": "Confirmation: URYEAD"
+        }
+      ]
+    }
+  ],
+  "lodging": {
+    "eyebrow": "Your Home for the Week",
+    "name": "Fouquet's Saint-Barth",
+    "description": "A historic address tucked into the hillside above Lurin, with sweeping views of the Caribbean and the harbor. Reimagined by Gilles & Boissier and reopened as one of the island's most beautifully designed properties, Fouquet's offers an elegant colonial feel with a fresh, intimate sensibility.",
+    "suite": [
+      "Prestige Suite, Pool & Sea View",
+      "Five nights, May 1 to May 6",
+      "Confirmation V-25256",
+      "Check-in 3:00 PM · Check-out 12:00 noon",
+      "Pre-paid in full · Incidentals settled at check-out"
+    ],
+    "inclusions": [
+      "Daily breakfast buffet, in the dining room or in-suite",
+      "Loungers at La Guérite Beach Club (reservations required)",
+      "A selection of items in your minibar",
+      "Complimentary Wi-Fi throughout the property"
+    ],
+    "virtuoso_label": "Your Virtuoso Amenities · via Fora",
+    "virtuoso": [
+      "$100 USD equivalent food & beverage credit, to be used during your stay (not combinable, not valid on room rate, no cash value if not redeemed in full)"
+    ],
+    "contacts": [
+      "+590 590 297 900",
+      "General Manager: Enrique Gluckman",
+      "Reservations Supervisor: Nelly Mehdizadeh",
+      "Concierge: concierge-stbarth@fouquets.com"
+    ]
+  },
+  "reservations": [
+    { "day": "Fri, May 1", "time": "8:15 PM", "name": "BONITO St. Barth · Gustavia", "notes": "2-hour table · 10-min grace · Conf. 9P2AYT3PJPHH" },
+    { "day": "Sat, May 2", "time": "Morning", "name": "Moke rental · Drop-off at Fouquet's", "notes": "Use through morning of departure" },
+    { "day": "Sat, May 2", "time": "10:30 AM", "name": "La Guérite · Loungers", "notes": "Via Fouquet's" },
+    { "day": "Sat, May 2", "time": "2:45 PM", "name": "La Guérite · Lunch", "notes": "Confirmed" },
+    { "day": "Sat, May 2", "time": "9:45 PM", "name": "Bagatelle · White Party Dinner", "notes": "Outdoor table · €350 pp min on wine & champagne · All white" },
+    { "day": "Sun, May 3", "time": "2:30 PM", "name": "Nao Beach Club · Lunch", "notes": "Concierge to request sunbeds morning of" },
+    { "day": "Sun, May 3", "time": "9:00 PM", "name": "Le Beef Bar · Hotel dinner", "notes": "Confirmed" },
+    { "day": "Mon, May 4", "time": "10:00 AM to 5:00 PM", "name": "Axopar 37 charter · Jicky Marine", "notes": "Picnics included · Boarding Ferry Dock, Gustavia" },
+    { "day": "Mon, May 4", "time": "9:30 PM", "name": "Sella · 1001 Nights themed party", "notes": "Confirmed" },
+    { "day": "Tue, May 5", "time": "2:30 PM", "name": "Gypsea Beach Club · Lunch", "notes": "Sunbeds reserved morning of via concierge" },
+    { "day": "Tue, May 5", "time": "9:30 PM", "name": "Isola · Farewell dinner", "notes": "Confirmed" },
+    { "day": "Wed, May 6", "time": "Morning", "name": "Moke rental · Pickup from Fouquet's", "notes": "Leave keys with concierge" }
+  ],
+  "contacts": {
+    "intro": "Keep this page handy. Reach out anytime and I will sort whatever comes up.",
+    "advisor": {
+      "name": "Joanna Johnsen",
+      "role": "Your Travel Advisor",
+      "rows": [
+        ["Phone", "314.503.2342"],
+        ["Email", "joanna.johnsen@fora.travel"],
+        ["Agency", "Joanna Elizabeth Travel"]
+      ]
+    },
+    "cards": [
+      {
+        "name": "Fouquet's Saint-Barth",
+        "role": "Your Hotel",
+        "rows": [
+          ["Phone", "+590 590 297 900"],
+          ["Concierge", "concierge-stbarth@fouquets.com"],
+          ["Address", "Dit Lurin, Lieu, Saint Barthélemy"]
+        ]
+      },
+      {
+        "name": "Tradewind Aviation",
+        "role": "SJU to SBH Flights · TJRDBU",
+        "rows": [
+          ["Phone", "+1 203 267 3305"],
+          ["US Toll Free", "800 376 7922"],
+          ["Email", "scheduledservice@flytradewind.com"]
+        ]
+      },
+      {
+        "name": "JetBlue",
+        "role": "JFK to SJU and SJU to HPN · URYEAD",
+        "rows": [
+          ["Phone", "1 800 538 2583"],
+          ["Web", "jetblue.com"]
+        ]
+      },
+      {
+        "name": "Jicky Marine",
+        "role": "Your Day at Sea · Axopar 37",
+        "rows": [
+          ["Email", "info@jickymarine.com"],
+          ["Boarding", "Ferry Dock, Rue de la République, Gustavia (facing the Pharmacy)"]
+        ]
+      }
+    ],
+    "send_off": "Have the most amazing trip! Drink all the rosé and soak up all the sun. You deserve it!",
+    "send_off_signature": "Joanna"
+  }
+}

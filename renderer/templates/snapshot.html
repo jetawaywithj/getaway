@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · Confirmed Bookings — Reservations Snapshot</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>
+  .snapshot { padding: 1.0in 1.1in 1.0in; }
+
+  .snapshot-eyebrow {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.36em;
+    text-indent: 0.36em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .snapshot-title {
+    margin-top: 0.16in;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 38pt;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+  }
+
+  table.res {
+    margin-top: 0.35in;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+    font-size: 10.5pt;
+    color: var(--ink);
+  }
+
+  table.res thead th {
+    text-align: left;
+    padding: 8pt 10pt;
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    background: var(--card);
+    border-bottom: 0.5px solid var(--hairline);
+  }
+
+  table.res tbody td {
+    padding: 8pt 10pt;
+    vertical-align: top;
+    border-bottom: 0.5px solid var(--hairline);
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  table.res tbody tr:last-child td { border-bottom: none; }
+
+  .col-day { width: 1.40in; font-family: var(--font-label); font-weight: 500; font-size: 7.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .col-time { width: 1.4in; color: var(--ink-soft); font-size: 10pt; }
+  .col-name { font-weight: 500; }
+  .col-notes { color: var(--ink-soft); font-size: 9.5pt; line-height: 1.45; }
+</style>
+</head>
+<body>
+<section class="page snapshot">
+  <div class="snapshot-eyebrow">Confirmed Bookings</div>
+  <h1 class="snapshot-title">Reservations Snapshot</h1>
+
+  <table class="res">
+    <thead>
+      <tr>
+        <th class="col-day">Day</th>
+        <th class="col-time">Time</th>
+        <th class="col-name">Reservation</th>
+        <th class="col-notes">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="col-day">Fri, May 1</td><td class="col-time">8:15 PM</td><td class="col-name">BONITO St. Barth · Gustavia</td><td class="col-notes">2-hour table · 10-min grace · Conf. 9P2AYT3PJPHH</td></tr>
+      <tr><td class="col-day">Sat, May 2</td><td class="col-time">Morning</td><td class="col-name">Moke rental · Drop-off at Fouquet's</td><td class="col-notes">Use through morning of departure</td></tr>
+      <tr><td class="col-day">Sat, May 2</td><td class="col-time">10:30 AM</td><td class="col-name">La Guérite · Loungers</td><td class="col-notes">Via Fouquet's</td></tr>
+      <tr><td class="col-day">Sat, May 2</td><td class="col-time">2:45 PM</td><td class="col-name">La Guérite · Lunch</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Sat, May 2</td><td class="col-time">9:45 PM</td><td class="col-name">Bagatelle · White Party Dinner</td><td class="col-notes">Outdoor table · €350 pp min on wine &amp; champagne · All white</td></tr>
+      <tr><td class="col-day">Sun, May 3</td><td class="col-time">2:30 PM</td><td class="col-name">Nao Beach Club · Lunch</td><td class="col-notes">Concierge to request sunbeds morning of</td></tr>
+      <tr><td class="col-day">Sun, May 3</td><td class="col-time">9:00 PM</td><td class="col-name">Le Beef Bar · Hotel dinner</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Mon, May 4</td><td class="col-time">10 AM – 5 PM</td><td class="col-name">Axopar 37 charter · Jicky Marine</td><td class="col-notes">Picnics included · Boarding Ferry Dock, Gustavia</td></tr>
+      <tr><td class="col-day">Mon, May 4</td><td class="col-time">9:30 PM</td><td class="col-name">Sella · 1001 Nights themed party</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Tue, May 5</td><td class="col-time">2:30 PM</td><td class="col-name">Gypsea Beach Club · Lunch</td><td class="col-notes">Sunbeds reserved morning of via concierge</td></tr>
+      <tr><td class="col-day">Tue, May 5</td><td class="col-time">9:30 PM</td><td class="col-name">Isola · Farewell dinner</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Wed, May 6</td><td class="col-time">Morning</td><td class="col-name">Moke rental · Pickup from Fouquet's</td><td class="col-notes">Leave keys with concierge</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
+</section>
+</body>
+</html>

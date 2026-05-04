@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · Anything You Need — Important Contacts</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>
+  .contacts { padding: 1.0in 1.1in 1.0in; }
+
+  .contacts-eyebrow {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.36em;
+    text-indent: 0.36em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .contacts-title {
+    margin-top: 0.18in;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 42pt;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+  }
+
+  .contacts-intro {
+    margin-top: 0.18in;
+    font-family: var(--font-body);
+    font-size: 11pt;
+    color: var(--ink);
+    max-width: 5in;
+  }
+
+  .contacts-grid {
+    margin-top: 0.45in;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.20in 0.30in;
+  }
+
+  .contact-card {
+    background: var(--card);
+    padding: 0.28in 0.32in 0.30in;
+  }
+
+  .contact-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 16pt;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .contact-role {
+    margin-top: 6pt;
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .contact-rows {
+    margin-top: 12pt;
+    list-style: none;
+  }
+  .contact-rows li {
+    display: grid;
+    grid-template-columns: 1.0in 1fr;
+    gap: 6pt;
+    padding: 5pt 0;
+    font-family: var(--font-body);
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .contact-rows .k {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-top: 1.5pt;
+  }
+
+  .send-off {
+    margin-top: 0.40in;
+    text-align: center;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 11.5pt;
+    color: var(--ink);
+  }
+  .send-off-sig {
+    margin-top: 6pt;
+    font-family: var(--font-script);
+    font-size: 32pt;
+    color: var(--accent);
+    line-height: 1;
+  }
+</style>
+</head>
+<body>
+<section class="page contacts">
+  <div class="contacts-eyebrow">Anything You Need</div>
+  <h1 class="contacts-title">Important Contacts</h1>
+  <p class="contacts-intro">Keep this page handy. Reach out anytime and I will sort whatever comes up.</p>
+
+  <div class="contacts-grid">
+    <div class="contact-card">
+      <div class="contact-name">Joanna Johnsen</div>
+      <div class="contact-role">Your Travel Advisor</div>
+      <ul class="contact-rows">
+        <li><span class="k">Phone</span><span>314.503.2342</span></li>
+        <li><span class="k">Email</span><span>joanna.johnsen@fora.travel</span></li>
+        <li><span class="k">Agency</span><span>Joanna Elizabeth Travel</span></li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-name">Fouquet's Saint-Barth</div>
+      <div class="contact-role">Your Hotel</div>
+      <ul class="contact-rows">
+        <li><span class="k">Phone</span><span>+590 590 297 900</span></li>
+        <li><span class="k">Concierge</span><span>concierge-stbarth@fouquets.com</span></li>
+        <li><span class="k">Address</span><span>Dit Lurin, Lieu, Saint Barthélemy</span></li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-name">Tradewind Aviation</div>
+      <div class="contact-role">SJU to SBH Flights · TJRDBU</div>
+      <ul class="contact-rows">
+        <li><span class="k">Phone</span><span>+1 203 267 3305</span></li>
+        <li><span class="k">US Toll Free</span><span>800 376 7922</span></li>
+        <li><span class="k">Email</span><span>scheduledservice@flytradewind.com</span></li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-name">JetBlue</div>
+      <div class="contact-role">JFK to SJU and SJU to HPN · URYEAD</div>
+      <ul class="contact-rows">
+        <li><span class="k">Phone</span><span>1 800 538 2583</span></li>
+        <li><span class="k">Web</span><span>jetblue.com</span></li>
+      </ul>
+    </div>
+
+    <div class="contact-card" style="grid-column: 1 / 3;">
+      <div class="contact-name">Jicky Marine</div>
+      <div class="contact-role">Your Day at Sea · Axopar 37</div>
+      <ul class="contact-rows">
+        <li><span class="k">Email</span><span>info@jickymarine.com</span></li>
+        <li><span class="k">Boarding</span><span>Ferry Dock, Rue de la République, Gustavia (facing the Pharmacy)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="send-off">"Have the most amazing trip! Drink all the rosé and soak up all the sun. You deserve it!"</div>
+  <div class="send-off-sig" style="text-align:center;">Joanna</div>
+
+  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
+</section>
+</body>
+</html>

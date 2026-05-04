@@ -1,0 +1,135 @@
+/* Day-page partial — included by every day-NN.html */
+
+.day { padding: 0.95in 1.1in 1.0in; }
+
+.day-head {
+  display: grid;
+  grid-template-columns: 1.1in 1fr;
+  align-items: start;
+  gap: 0.18in;
+  margin-bottom: 0.45in;
+}
+
+.day-folio {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 56pt;
+  line-height: 0.95;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.day-meta { padding-top: 0.18in; }
+
+.day-date {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 7.5pt;
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.day-title {
+  margin-top: 8pt;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.08;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+
+.day-subtitle {
+  margin-top: 8pt;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 11.5pt;
+  color: var(--ink-soft);
+}
+
+.day-items { list-style: none; }
+
+.day-item {
+  display: grid;
+  grid-template-columns: 1.15in 1fr;
+  gap: 0.22in;
+  padding: 14pt 0;
+  border-top: 0.5px solid var(--hairline);
+}
+.day-item:last-child {
+  border-bottom: 0.5px solid var(--hairline);
+}
+
+.di-time-col {
+  text-align: left;
+}
+
+.di-time {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.di-loc {
+  margin-top: 6pt;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 6.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+
+.di-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12pt;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.di-badges {
+  display: inline;
+  margin-left: 6pt;
+  vertical-align: 1pt;
+}
+
+.di-badge {
+  display: inline-block;
+  margin-left: 4pt;
+  padding: 1.5pt 5pt;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 6pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 0.5px solid var(--accent);
+  border-radius: 1pt;
+}
+
+.di-body {
+  margin-top: 6pt;
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.di-meta {
+  margin-top: 6pt;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 6.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}

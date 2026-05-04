@@ -1,15 +1,43 @@
-/* JET — Joanna Elizabeth Travel · base typography & layout primitives
- * Type slots: display-sans (Inter Display) | display-serif (Playfair Display)
- *             body (EB Garamond) | script (Allura) | label (Montserrat)
- * Page: US Letter portrait, full-bleed CSS @page.
+/* JET — Joanna Elizabeth Travel · brand tokens & layout primitives
+ * ──────────────────────────────────────────────────────────────────
+ * Palette (warm blush · terracotta accent · deep teal-navy ink)
+ * Type slots (display serif · script · body serif · label sans)
+ * Page: US Letter portrait, full-bleed @page, no margins.
  *
- * Fonts ship locally from @fontsource/* via woff2 — no network at render.
- * For production swaps to paid fonts (Brittany Signature, Safira March,
- * The Seasons): drop the .otf/.woff2 file in renderer/assets/fonts and
- * point the matching @font-face at it.
+ * Type strategy:
+ *   Free tier (default · ships in repo via @fontsource):
+ *     display-serif → Playfair Display
+ *     body-serif    → Cormorant Garamond
+ *     script        → Allura
+ *     label-sans    → Montserrat
+ *
+ *   Paid tier (drop in renderer/assets/fonts/ to upgrade automatically):
+ *     The Seasons      → display serif
+ *     Brittany Signature OR Safira March → script
+ *   The @font-face blocks below already point at the expected paths;
+ *   browser falls back through the stack until a file is found.
  */
 
-/* ─────────────────────────────────────────────────────── @font-face */
+/* ─────────────────────────────────────────── paid tier (commented)
+ * Once licensed font files are dropped into renderer/assets/fonts/,
+ * uncomment the matching @font-face block below and the type system
+ * upgrades automatically — no template edits needed.
+ *
+ * @font-face { font-family: 'The Seasons';
+ *   font-weight: 400; font-display: swap;
+ *   src: url('../assets/fonts/TheSeasons-Regular.woff2') format('woff2'); }
+ * @font-face { font-family: 'The Seasons';
+ *   font-weight: 300; font-display: swap;
+ *   src: url('../assets/fonts/TheSeasons-Light.woff2') format('woff2'); }
+ * @font-face { font-family: 'Brittany Signature';
+ *   font-weight: 400; font-display: swap;
+ *   src: url('../assets/fonts/BrittanySignature.woff2') format('woff2'); }
+ * @font-face { font-family: 'Safira March';
+ *   font-weight: 400; font-display: swap;
+ *   src: url('../assets/fonts/SafiraMarch.woff2') format('woff2'); }
+ */
+
+/* ─────────────────────────────────────────── @font-face · free tier */
 
 @font-face {
   font-family: 'Allura';
@@ -17,17 +45,6 @@
   src: url('../node_modules/@fontsource/allura/files/allura-latin-400-normal.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'Italianno';
-  font-weight: 400; font-style: normal; font-display: swap;
-  src: url('../node_modules/@fontsource/italianno/files/italianno-latin-400-normal.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  font-weight: 300; font-style: normal; font-display: swap;
-  src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-300-normal.woff2') format('woff2');
-}
 @font-face {
   font-family: 'Montserrat';
   font-weight: 400; font-style: normal; font-display: swap;
@@ -37,6 +54,11 @@
   font-family: 'Montserrat';
   font-weight: 500; font-style: normal; font-display: swap;
   src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2') format('woff2');
 }
 
 @font-face {
@@ -62,48 +84,56 @@
 }
 @font-face {
   font-family: 'Cormorant Garamond';
+  font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
   font-weight: 400; font-style: italic; font-display: swap;
   src: url('../node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff2') format('woff2');
 }
-
-/* ─────────────────────────────────────────────────────── page setup */
-
-@page {
-  size: 8.5in 11in;
-  margin: 0;
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-weight: 500; font-style: normal; font-display: swap;
+  src: url('../node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2') format('woff2');
 }
 
+/* ─────────────────────────────────────────── page setup */
+
+@page { size: 8.5in 11in; margin: 0; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Palette */
+  --paper:        #F2E5D7;
+  --paper-soft:   #F8EFE2;
+  --card:         #FBF3E6;
+  --ink:          #1F3641;
+  --ink-soft:     #46596A;
+  --ink-mute:     #8A8A90;
+  --hairline:     rgba(31, 54, 65, 0.16);
+  --accent:       #C26A48;
+  --accent-soft:  #D88E6E;
+
+  /* Type slots — drop in paid families and they take over via @font-face */
+  --font-display:  'The Seasons', 'Playfair Display', Georgia, serif;
+  --font-script:   'Brittany Signature', 'Safira March', 'Allura', cursive;
+  --font-body:     'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-label:    'Montserrat', 'Inter', sans-serif;
+}
 
 html, body {
   width: 8.5in;
   height: 11in;
-  background: #F5EFE6;
-  color: #1F2024;
-  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
   font-size: 11pt;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
   font-feature-settings: "kern", "liga", "onum";
-}
-
-:root {
-  --ink: #1F2024;
-  --ink-soft: #4A4A4F;
-  --ink-mute: #8A8A90;
-  --paper: #F5EFE6;
-
-  /* Type slots — swap these to change the system globally */
-  --font-display-sans: 'Inter Display', 'Inter', sans-serif;
-  --font-display-serif: 'Playfair Display', Georgia, serif;
-  --font-body: 'EB Garamond', Georgia, serif;
-  --font-script: 'Allura', cursive;
-  --font-label: 'Montserrat', 'Inter', sans-serif;
-
-  /* Default display family — override per template via .display-serif class */
-  --font-display: var(--font-display-sans);
 }
 
 .page {
@@ -114,16 +144,125 @@ html, body {
   overflow: hidden;
 }
 
-/* ─────────────────────────────────────────────────────── photo placeholder */
+/* ─────────────────────────────────────────── shared atoms */
 
+.eyebrow {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 7.5pt;
+  letter-spacing: 0.32em;
+  text-indent: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.h1-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 46pt;
+  line-height: 1.02;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.h2-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.card {
+  background: var(--card);
+  padding: 0.32in 0.36in;
+}
+
+.card-label {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 8pt;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.card-head {
+  margin-top: 12pt;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18pt;
+  line-height: 1.18;
+  color: var(--ink);
+}
+
+.card-sub {
+  margin-top: 8pt;
+  font-family: var(--font-body);
+  font-size: 10pt;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8pt;
+  padding: 2pt 6pt;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 6pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 0.5px solid var(--accent);
+  border-radius: 1pt;
+  vertical-align: 2pt;
+}
+
+.confirmed {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.footer-line {
+  position: absolute;
+  bottom: 0.55in;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 7pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.folio-num {
+  position: absolute;
+  top: 0.62in;
+  left: 0.85in;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 36pt;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* photo placeholder — only used until real assets land */
 .photo {
   background: #DCD2BD;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .photo::before {
   content: attr(data-caption);
   font-family: var(--font-label);
@@ -131,5 +270,5 @@ html, body {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(31, 32, 36, 0.55);
+  color: rgba(31, 54, 65, 0.55);
 }
