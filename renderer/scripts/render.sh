@@ -43,18 +43,21 @@ render_one() {
     "$file_url" 2>&1 | grep -vE "^\[|handshake failed|SSL error|net_error|Fontconfig|Could not|GPU process|libGL|EGL|gpu/" || true
 }
 
-# Page order for the combined book
+# Page order for the combined book.
+# Note: know-before.html is for international trips — drop the line for
+# domestic / US-only itineraries.
 PAGES=(
   templates/cover.html
   templates/note.html
+  templates/know-before.html
   templates/overview.html
+  templates/lodging.html
   templates/day-01.html
   templates/day-02.html
   templates/day-03.html
   templates/day-04.html
   templates/day-05.html
   templates/day-06.html
-  templates/lodging.html
   templates/snapshot.html
   templates/contacts.html
 )
@@ -89,9 +92,9 @@ if command -v pdfunite >/dev/null 2>&1; then
   echo "→ combining → book.pdf"
   cd "$OUT"
   BOOK_PARTS=(
-    cover.pdf note.pdf overview.pdf
+    cover.pdf note.pdf know-before.pdf overview.pdf lodging.pdf
     day-01.pdf day-02.pdf day-03.pdf day-04.pdf day-05.pdf day-06.pdf
-    lodging.pdf snapshot.pdf contacts.pdf
+    snapshot.pdf contacts.pdf
   )
   if [[ ${#APPENDIX_PDFS[@]} -gt 0 ]]; then
     BOOK_PARTS+=(confirmations-divider.pdf)
