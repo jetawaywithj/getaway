@@ -5,7 +5,7 @@
 <title>JET · Your Trip — At a Glance</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
-  .overview { padding: 0.95in 1.0in 1.0in; }
+  .overview { padding: 0.85in 1.0in 0.95in; }
 
   .ov-eyebrow {
     font-family: var(--font-label);
@@ -18,153 +18,118 @@
   }
 
   .ov-title {
-    margin-top: 0.16in;
+    margin-top: 0.14in;
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 46pt;
+    font-size: 42pt;
     line-height: 1.05;
     letter-spacing: 0.005em;
     color: var(--ink);
   }
 
   .ov-summary {
-    margin-top: 0.25in;
+    margin-top: 0.18in;
     font-family: var(--font-body);
-    font-size: 12pt;
+    font-size: 11.5pt;
     color: var(--ink);
-    line-height: 1.55;
-    max-width: 6.4in;
+    line-height: 1.5;
   }
-  .ov-summary .who {
-    font-weight: 500;
-  }
+  .ov-summary .who { font-weight: 500; }
   .ov-summary .where {
     font-family: var(--font-script);
     color: var(--accent);
     font-size: 22pt;
     line-height: 1;
     display: block;
-    margin-top: 6pt;
+    margin-top: 4pt;
   }
 
-  .ov-rule {
+  .timeline {
     margin-top: 0.32in;
-    height: 0.5px;
-    background: var(--hairline);
+    border-top: 0.5px solid var(--hairline);
   }
 
-  .ov-section {
-    margin-top: 0.32in;
+  .day-row {
+    display: grid;
+    grid-template-columns: 0.5in 1.0in 1fr;
+    column-gap: 0.20in;
+    align-items: baseline;
+    padding: 14pt 0;
+    border-bottom: 0.5px solid var(--hairline);
   }
 
-  .ov-section-label {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.34em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .ov-section-head {
-    margin-top: 6pt;
+  .day-row .num {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 22pt;
-    line-height: 1.1;
+    font-size: 26pt;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+
+  .day-row .date {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    line-height: 1.4;
+  }
+
+  .day-row .title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 16pt;
+    line-height: 1.18;
     color: var(--ink);
   }
 
-  .leg-grid {
-    margin-top: 14pt;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.20in 0.32in;
-  }
-  .leg {
-    background: var(--card);
-    padding: 0.20in 0.24in;
-  }
-  .leg-label {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 6.5pt;
-    letter-spacing: 0.30em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .leg-day {
+  .day-row .summary {
     margin-top: 4pt;
     font-family: var(--font-body);
     font-style: italic;
     font-size: 10.5pt;
     color: var(--ink-soft);
-  }
-  .leg-flights {
-    margin-top: 8pt;
-    list-style: none;
-    font-family: var(--font-body);
-    font-size: 10.5pt;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-  .leg-flights li {
-    padding: 3pt 0;
-  }
-  .leg-conf {
-    margin-top: 6pt;
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 6.5pt;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-
-  .hotel-row {
-    margin-top: 14pt;
-    background: var(--card);
-    padding: 0.22in 0.28in;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 0.32in;
-    align-items: start;
-  }
-  .hotel-name {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 18pt;
-    line-height: 1.15;
-    color: var(--ink);
-  }
-  .hotel-meta {
-    margin-top: 6pt;
-    font-family: var(--font-body);
-    font-size: 10.5pt;
-    color: var(--ink-soft);
     line-height: 1.45;
   }
-  .hotel-side {
+
+  .ov-foot {
+    margin-top: 0.30in;
+    padding-top: 0.16in;
+    border-top: 0.5px solid var(--hairline);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.32in;
+    align-items: baseline;
+  }
+
+  .ov-foot-label {
+    font-family: var(--font-label);
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .ov-foot-val {
+    margin-top: 4pt;
+    font-family: var(--font-body);
+    font-size: 11pt;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .ov-foot-conf {
+    text-align: right;
     font-family: var(--font-label);
     font-weight: 500;
     font-size: 7pt;
     letter-spacing: 0.20em;
     text-transform: uppercase;
     color: var(--accent);
-    text-align: right;
     line-height: 1.7;
   }
-  .hotel-side .conf { color: var(--ink); }
-
-  .highlights {
-    margin-top: 0.30in;
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 12.5pt;
-    color: var(--ink);
-    line-height: 1.5;
-    max-width: 6.4in;
-  }
+  .ov-foot-conf .conf { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -177,51 +142,73 @@
     <span class="where">Saint Barthélemy</span>
   </p>
 
-  <div class="ov-rule"></div>
+  <div class="timeline">
 
-  <div class="ov-section">
-    <div class="ov-section-label">Flights</div>
-    <div class="ov-section-head">Two stops, both ways</div>
-
-    <div class="leg-grid">
-      <div class="leg">
-        <div class="leg-label">Outbound</div>
-        <div class="leg-day">Friday, May 1</div>
-        <ul class="leg-flights">
-          <li><strong>6:30 AM</strong> · JetBlue 1803 · JFK → SJU · arrives 10:19 AM AST</li>
-          <li><strong>11:50 AM</strong> · Tradewind 172 · SJU → SBH · arrives 12:57 PM</li>
-        </ul>
-        <div class="leg-conf">Conf · URYEAD (JetBlue) · TJRDBU (Tradewind)</div>
-      </div>
-      <div class="leg">
-        <div class="leg-label">Return</div>
-        <div class="leg-day">Wednesday, May 6</div>
-        <ul class="leg-flights">
-          <li><strong>11:20 AM</strong> · Tradewind 123 · SBH → SJU · arrives 12:25 PM</li>
-          <li><strong>4:55 PM</strong> · JetBlue 2602 · SJU → HPN · arrives 9:00 PM EDT</li>
-        </ul>
-        <div class="leg-conf">Conf · TJRDBU · URYEAD</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ov-section">
-    <div class="ov-section-label">Hotel</div>
-    <div class="hotel-row">
+    <div class="day-row">
+      <div class="num">01</div>
+      <div class="date">Fri<br>May 1</div>
       <div>
-        <div class="hotel-name">Fouquet's Saint-Barth</div>
-        <div class="hotel-meta">Prestige Suite, Pool &amp; Sea View · Lurin · Five nights, May 1 — 6</div>
-      </div>
-      <div class="hotel-side">
-        Confirmation<br>
-        <span class="conf">V-25256</span>
+        <div class="title">Arrival in St. Barths</div>
+        <div class="summary">Flights JFK → SJU → SBH · Check-in at Fouquet's · Welcome dinner at BONITO</div>
       </div>
     </div>
+
+    <div class="day-row">
+      <div class="num">02</div>
+      <div class="date">Sat<br>May 2</div>
+      <div>
+        <div class="title">Beach Club Saturday &amp; Bagatelle White Party</div>
+        <div class="summary">Moke arrives · Sunbeds &amp; lunch at La Guérite · Bagatelle White Party</div>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="num">03</div>
+      <div class="date">Sun<br>May 3</div>
+      <div>
+        <div class="title">Nao Beach &amp; Le Beef Bar at Home</div>
+        <div class="summary">Lunch at Nao Beach Club · Dinner at Le Beef Bar in the hotel</div>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="num">04</div>
+      <div class="date">Mon<br>May 4</div>
+      <div>
+        <div class="title">A Day At Sea Aboard the Axopar</div>
+        <div class="summary">Private Axopar 37 charter, 10 AM – 5 PM · Dinner at Sella · 1001 Nights</div>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="num">05</div>
+      <div class="date">Tue<br>May 5</div>
+      <div>
+        <div class="title">Gypsea &amp; Isola</div>
+        <div class="summary">Lunch at Gypsea Beach Club · Farewell dinner at Isola</div>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="num">06</div>
+      <div class="date">Wed<br>May 6</div>
+      <div>
+        <div class="title">Departure Home</div>
+        <div class="summary">Hotel transfer to SBH · Flights SBH → SJU → HPN</div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="ov-section">
-    <div class="ov-section-label">Highlights</div>
-    <p class="highlights">Beach club lunches at La Guérite, Nao &amp; Gypsea · a full day at sea aboard a private Axopar 37 · Bagatelle's iconic Saturday White Party · five unforgettable dinners.</p>
+  <div class="ov-foot">
+    <div>
+      <div class="ov-foot-label">Hotel</div>
+      <div class="ov-foot-val">Fouquet's Saint-Barth · Prestige Suite, Pool &amp; Sea View · Lurin</div>
+    </div>
+    <div class="ov-foot-conf">
+      Confirmation<br>
+      <span class="conf">V-25256</span>
+    </div>
   </div>
 
   <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
