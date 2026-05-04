@@ -2,11 +2,15 @@
 # Render all JET itinerary templates → PDF + PNG, then combine into one book PDF.
 # Usage: scripts/render.sh                        # all pages + combined book
 #        scripts/render.sh templates/cover.html   # just one
+#
+# To skip the confirmations appendix: SKIP_CONFIRMATIONS=1 scripts/render.sh
 set -euo pipefail
 
 CHROME="${CHROME:-/opt/pw-browsers/chromium-1194/chrome-linux/chrome}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="$(cd "$ROOT/.." && pwd)/samples"
+REPO="$(cd "$ROOT/.." && pwd)"
+OUT="$REPO/samples"
+CONFIRMS="$REPO/confirmations"
 mkdir -p "$OUT"
 
 CHROME_FLAGS=(
@@ -70,15 +74,30 @@ for tpl in "${PAGES[@]}"; do
   render_one "$tpl"
 done
 
+# Decide whether to include confirmations appendix
+APPENDIX_PDFS=()
+if [[ -z "${SKIP_CONFIRMATIONS:-}" ]] && compgen -G "$CONFIRMS/*.pdf" > /dev/null; then
+  echo "→ confirmations divider"
+  render_one "templates/confirmations-divider.html"
+  # Sort confirmations alphabetically (so 01-, 02-, ... prefixes order them)
+  while IFS= read -r f; do APPENDIX_PDFS+=("$f"); done < <(ls -1 "$CONFIRMS"/*.pdf 2>/dev/null | sort)
+  echo "→ appendix: ${#APPENDIX_PDFS[@]} confirmation PDFs"
+fi
+
 # Combine all per-page PDFs into one book.pdf using pdfunite (poppler-utils)
 if command -v pdfunite >/dev/null 2>&1; then
   echo "→ combining → book.pdf"
   cd "$OUT"
-  pdfunite \
-    cover.pdf note.pdf overview.pdf \
-    day-01.pdf day-02.pdf day-03.pdf day-04.pdf day-05.pdf day-06.pdf \
-    lodging.pdf snapshot.pdf contacts.pdf \
-    book.pdf
+  BOOK_PARTS=(
+    cover.pdf note.pdf overview.pdf
+    day-01.pdf day-02.pdf day-03.pdf day-04.pdf day-05.pdf day-06.pdf
+    lodging.pdf snapshot.pdf contacts.pdf
+  )
+  if [[ ${#APPENDIX_PDFS[@]} -gt 0 ]]; then
+    BOOK_PARTS+=(confirmations-divider.pdf)
+    BOOK_PARTS+=("${APPENDIX_PDFS[@]}")
+  fi
+  pdfunite "${BOOK_PARTS[@]}" book.pdf
 fi
 
 echo "✓ Output → $OUT"
