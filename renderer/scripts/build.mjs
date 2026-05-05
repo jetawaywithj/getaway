@@ -234,7 +234,16 @@ function kbygHtml() {
 
 function overviewHtml() {
   const o = trip.overview || {};
-  const rows = (trip.days || []).map((d) => {
+  const days = trip.days || [];
+  // Page 1 fits the title block + ~5 rows comfortably; spill the rest onto
+  // page 2. Threshold is intentionally conservative so a long row title
+  // doesn't push the last entry under the footer.
+  const FIRST_PAGE_MAX = 5;
+  const split = days.length > 6;
+  const page1 = split ? days.slice(0, FIRST_PAGE_MAX) : days;
+  const page2 = split ? days.slice(FIRST_PAGE_MAX) : [];
+
+  const renderRows = (list) => list.map((d) => {
     const dateBits = (d.weekday || '').slice(0, 3) + '<br>' + (d.date_label || '').replace(/^[A-Za-z]+,\s*/, '');
     return `
     <div class="day-row">
@@ -246,13 +255,8 @@ function overviewHtml() {
       </div>
     </div>`;
   }).join('\n');
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>JET · ${esc(o.title || 'At a Glance')}</title>
-<link rel="stylesheet" href="../styles/base.css">
-<style>
+
+  const styles = `
   .overview { padding: 0.85in 1.0in 0.95in; }
   .ov-eyebrow { font-family: var(--font-label); font-weight: 500; font-size: 7.5pt;
     letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase; color: var(--accent); }
@@ -274,11 +278,9 @@ function overviewHtml() {
   .day-row .title { font-family: var(--font-display); font-weight: 400; font-size: 16pt;
     line-height: 1.18; color: var(--ink); }
   .day-row .summary { margin-top: 4pt; font-family: var(--font-body); font-style: italic;
-    font-size: 10.5pt; color: var(--ink-soft); line-height: 1.45; }
-</style>
-</head>
-<body>
-<section class="page overview">
+    font-size: 10.5pt; color: var(--ink-soft); line-height: 1.45; }`;
+
+  const page1Section = `<section class="page overview">
   <div class="ov-eyebrow">${esc(o.eyebrow || 'Your Trip')}</div>
   <h1 class="ov-title">${esc(o.title || 'At a Glance')}</h1>
 
@@ -287,11 +289,34 @@ function overviewHtml() {
     <span class="where">${esc(o.where_script || '')}</span>
   </p>
 
-  <div class="timeline">${rows}
+  <div class="timeline">${renderRows(page1)}
   </div>
 
   ${footerLine}
-</section>
+</section>`;
+
+  const page2Section = page2.length === 0 ? '' : `
+<section class="page overview">
+  <div class="ov-eyebrow">${esc(o.eyebrow || 'Your Trip')} · Continued</div>
+  <h1 class="ov-title">${esc(o.title || 'At a Glance')}</h1>
+
+  <div class="timeline" style="margin-top: 0.20in;">${renderRows(page2)}
+  </div>
+
+  ${footerLine}
+</section>`;
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · ${esc(o.title || 'At a Glance')}</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>${styles}
+</style>
+</head>
+<body>
+${page1Section}${page2Section}
 </body>
 </html>
 `;
