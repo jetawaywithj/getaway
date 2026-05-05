@@ -481,7 +481,7 @@ function lodgingMulti(l, stops) {
 // ──────────────────────────────────────────────────────────────────────────
 
 function dayHtml(day) {
-  const items = (day.items || []).map((it) => {
+  const renderItem = (it) => {
     const badges = (it.badges || []).map((b) => `<span class="di-badge">${esc(b)}</span>`).join('');
     const meta = it.meta ? `<div class="di-meta">${esc(it.meta)}</div>` : '';
     const loc = it.tz_loc ? `<div class="di-loc">${esc(it.tz_loc)}</div>` : '';
@@ -496,6 +496,63 @@ function dayHtml(day) {
           ${meta}
         </div>
       </li>`;
+  };
+
+  // Approximate height per item: base 0.55in + ~0.18in for every ~80 chars of body
+  // text (rough char-wrap). Items with meta lines add another 0.20in.
+  const itemHeight = (it) => {
+    const bodyLen = (it.body || '').length;
+    const wraps = Math.max(1, Math.ceil(bodyLen / 80));
+    return 0.45 + (wraps - 1) * 0.18 + (it.meta ? 0.22 : 0) + ((it.badges || []).length > 0 ? 0.05 : 0);
+  };
+
+  // Page 1 budget allows for the day header (~1.5in). Continuation pages use a
+  // smaller header so they fit more items.
+  const PAGE1_BUDGET = 8.0;
+  const PAGEN_BUDGET = 9.4;
+
+  const items = day.items || [];
+  const pages = [[]];
+  let used = 0;
+  let budget = PAGE1_BUDGET;
+  for (const it of items) {
+    const h = itemHeight(it);
+    if (used + h > budget && pages[pages.length - 1].length > 0) {
+      pages.push([]);
+      used = 0;
+      budget = PAGEN_BUDGET;
+    }
+    pages[pages.length - 1].push(it);
+    used += h;
+  }
+
+  const sections = pages.map((pageItems, pi) => {
+    const isFirst = pi === 0;
+    const headerBlock = isFirst
+      ? `<header class="day-head">
+    <div class="day-folio">${esc(day.n)}</div>
+    <div class="day-meta">
+      <div class="day-date">${esc(day.date_label)}</div>
+      <h1 class="day-title">${esc(day.title)}</h1>
+      <div class="day-subtitle">${esc(day.subtitle || '')}</div>
+    </div>
+  </header>`
+      : `<header class="day-head" style="margin-bottom: 0.2in;">
+    <div class="day-folio" style="font-size: 32pt;">${esc(day.n)}</div>
+    <div class="day-meta">
+      <div class="day-date">${esc(day.date_label)} · Continued</div>
+      <h1 class="day-title" style="font-size: 18pt;">${esc(day.title)}</h1>
+    </div>
+  </header>`;
+    return `<section class="page day">
+  ${headerBlock}
+
+  <ol class="day-items">
+${pageItems.map(renderItem).join('\n')}
+  </ol>
+
+  ${footerLine}
+</section>`;
   }).join('\n');
 
   return `<!doctype html>
@@ -507,22 +564,7 @@ function dayHtml(day) {
 <link rel="stylesheet" href="../styles/day.css">
 </head>
 <body>
-<section class="page day">
-  <header class="day-head">
-    <div class="day-folio">${esc(day.n)}</div>
-    <div class="day-meta">
-      <div class="day-date">${esc(day.date_label)}</div>
-      <h1 class="day-title">${esc(day.title)}</h1>
-      <div class="day-subtitle">${esc(day.subtitle || '')}</div>
-    </div>
-  </header>
-
-  <ol class="day-items">
-${items}
-  </ol>
-
-  ${footerLine}
-</section>
+${sections}
 </body>
 </html>
 `;
@@ -535,7 +577,29 @@ ${items}
 function snapshotHtml() {
   const s = trip.snapshot;
   if (!s) return null;
-  const groups = (s.groups || []).map((g) => {
+  const allGroups = s.groups || [];
+
+  // Cap by row count so an over-stuffed group can't overflow the page. Page 1
+  // is tighter because of the title block; continuation pages use a smaller
+  // header so they fit more rows. Groups are kept whole — never split.
+  const PAGE1_ROW_LIMIT = 14;
+  const PAGEN_ROW_LIMIT = 18;
+
+  const pages = [[]];
+  let usedRows = 0;
+  for (const g of allGroups) {
+    const isFirst = pages.length === 1;
+    const limit = isFirst ? PAGE1_ROW_LIMIT : PAGEN_ROW_LIMIT;
+    const rowCount = (g.rows || []).length;
+    if (usedRows + rowCount > limit && pages[pages.length - 1].length > 0) {
+      pages.push([]);
+      usedRows = 0;
+    }
+    pages[pages.length - 1].push(g);
+    usedRows += rowCount;
+  }
+
+  const renderGroup = (g) => {
     const rows = (g.rows || []).map((r) => `      <tr><td class="col-day">${esc(r.day)}</td><td class="col-time">${esc(r.time || '')}</td><td class="col-name">${esc(r.name)}</td><td class="col-notes">${esc(r.notes || '')}</td></tr>`).join('\n');
     return `
   <div class="group">
@@ -544,6 +608,21 @@ function snapshotHtml() {
 ${rows}
     </table>
   </div>`;
+  };
+
+  const sections = pages.map((groups, i) => {
+    const isFirst = i === 0;
+    const eyebrowText = isFirst
+      ? (s.eyebrow || 'Confirmed Bookings')
+      : `${s.eyebrow || 'Confirmed Bookings'} · Continued`;
+    const titleBlock = `
+  <div class="snapshot-eyebrow">${esc(eyebrowText)}</div>
+  <h1 class="snapshot-title">${esc(s.title || 'Reservations Snapshot')}</h1>`;
+    return `<section class="page snapshot">${titleBlock}
+${groups.map(renderGroup).join('\n')}
+
+  ${footerLine}
+</section>`;
   }).join('\n');
 
   return `<!doctype html>
@@ -576,13 +655,7 @@ ${rows}
 </style>
 </head>
 <body>
-<section class="page snapshot">
-  <div class="snapshot-eyebrow">${esc(s.eyebrow || 'Confirmed Bookings')}</div>
-  <h1 class="snapshot-title">${esc(s.title || 'Reservations Snapshot')}</h1>
-${groups}
-
-  ${footerLine}
-</section>
+${sections}
 </body>
 </html>
 `;
@@ -606,13 +679,34 @@ ${rows}
     </div>`;
   };
 
-  const cards = [];
-  if (c.advisor) cards.push(card(c.advisor));
-  for (const card_ of (c.cards || [])) cards.push(card(card_));
-  // If odd number of cards, span the last one across both columns
-  if (cards.length % 2 === 1) {
-    const lastEntry = c.cards[c.cards.length - 1] || c.advisor;
-    cards[cards.length - 1] = card(lastEntry, true);
+  // Collect all entries (advisor + cards) so we can paginate consistently.
+  const entries = [];
+  if (c.advisor) entries.push(c.advisor);
+  for (const card_ of (c.cards || [])) entries.push(card_);
+
+  // Page 1 has the title block + intro — fits 4 cards (2 rows of 2).
+  // Continuation pages have a smaller header and fit 6 cards (3 rows of 2).
+  // Reserve room on the last page for the send-off + script signature.
+  const PAGE1_CAP = 4;
+  const PAGEN_CAP = 6;
+  const sendOffReserve = c.send_off ? 1 : 0;
+
+  const pageGroups = [];
+  let i = 0;
+  while (i < entries.length) {
+    const isFirst = pageGroups.length === 0;
+    const cap = isFirst ? PAGE1_CAP : PAGEN_CAP;
+    pageGroups.push(entries.slice(i, i + cap));
+    i += cap;
+  }
+  // If the last page is full and we have a send-off, push send-off to its own slot
+  // by leaving the last page slightly less full when needed.
+  const lastPage = pageGroups[pageGroups.length - 1];
+  const lastCap = pageGroups.length === 1 ? PAGE1_CAP : PAGEN_CAP;
+  if (sendOffReserve && lastPage.length > lastCap - 1) {
+    // Move final card to a new page so send-off has room
+    const overflow = lastPage.pop();
+    pageGroups.push([overflow]);
   }
 
   return `<!doctype html>
@@ -648,20 +742,39 @@ ${rows}
 </style>
 </head>
 <body>
-<section class="page contacts">
-  <div class="contacts-eyebrow">${esc(c.eyebrow || 'Anything You Need')}</div>
+${pageGroups.map((group, pi) => {
+  const isFirst = pi === 0;
+  const isLast = pi === pageGroups.length - 1;
+  const grouped = group.map((e, idx) => {
+    // span the last card if odd count on this page
+    const odd = group.length % 2 === 1;
+    return card(e, odd && idx === group.length - 1);
+  }).join('\n');
+  const eyebrow = isFirst
+    ? esc(c.eyebrow || 'Anything You Need')
+    : esc((c.eyebrow || 'Anything You Need') + ' · Continued');
+  const titleBlock = isFirst
+    ? `<div class="contacts-eyebrow">${eyebrow}</div>
   <h1 class="contacts-title">${esc(c.title || 'Important Contacts')}</h1>
   <p class="contacts-intro">${esc(c.intro || '')}</p>
 
-  <div class="contacts-grid">
-${cards.join('\n')}
-  </div>
+  <div class="contacts-grid">`
+    : `<div class="contacts-eyebrow">${eyebrow}</div>
+  <h1 class="contacts-title" style="font-size: 28pt;">${esc(c.title || 'Important Contacts')}</h1>
 
-  ${c.send_off ? `<div class="send-off">"${esc(c.send_off)}"</div>` : ''}
-  ${c.send_off_signature ? `<div class="send-off-sig">${esc(c.send_off_signature)}</div>` : ''}
+  <div class="contacts-grid" style="margin-top: 0.30in;">`;
+  const sendOff = isLast && c.send_off
+    ? `\n  <div class="send-off">"${esc(c.send_off)}"</div>\n  ${c.send_off_signature ? `<div class="send-off-sig">${esc(c.send_off_signature)}</div>` : ''}`
+    : '';
+  return `<section class="page contacts">
+  ${titleBlock}
+${grouped}
+  </div>
+${sendOff}
 
   ${footerLine}
-</section>
+</section>`;
+}).join('\n')}
 </body>
 </html>
 `;
