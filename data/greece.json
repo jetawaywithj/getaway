@@ -1,0 +1,320 @@
+{
+  "$schema": "trip.v2",
+  "slug": "greece-may-2026",
+  "footer": "Joanna · Greece · May 2026",
+  "cover": {
+    "hero_label": "HERO PHOTOGRAPH · CYCLADES",
+    "photo": "greece/cover.jpg",
+    "brand_mark": "JET · Joanna Elizabeth Travel",
+    "title_html": "A Greek Islands Journey for<br>Joanna",
+    "destination_script": "Greece",
+    "dates": "Monday, May 11 — Sunday, May 17, 2026"
+  },
+  "note": {
+    "eyebrow": "What's Ahead",
+    "salutation": "Welcome to Greece!",
+    "body": [
+      "Joanna, this is going to be such a beautiful week.",
+      "Athens, Mykonos, Paros, Santorini — four very different islands strung together over seven days, with the kind of pace that lets you actually breathe between them. A whitewashed start in Plaka, two nights tucked into a private villa above Psarou, an organic farm lunch on Paros, and the caldera of Oia as a finale.",
+      "La Divina is your home in Athens — a 12-suite neoclassical hideaway dedicated to Maria Callas, with views straight to the Acropolis. From there, a quick flight to Mykonos and your private villa. Ferries handle the island hops to Paros and Santorini, with private vans waiting at every port and airport, every single day.",
+      "Lunches and dinners are pre-arranged at the spots worth pre-arranging — the Cook & Feast chef night at the Mykonos villa, the farm tasting on Paros, the wine tour through Santorini's volcanic vineyards, the farewell at Pacman as the sun sets over the caldera. The mornings are mostly yours to slow down with.",
+      "The rhythm is intentional: two nights in the islands you'll want to linger in, one night where one is enough. Transfers are confirmed door-to-door, ferries are booked, and every property is expecting you.",
+      "If anything shifts on the ground — a ferry running late, a restaurant closing early, a beach club you'd rather skip — your local concierge and I are both a text away. The whole point is that you don't have to think about logistics.",
+      "Have the most wonderful trip."
+    ],
+    "sign_off": "Warmly,",
+    "signature": "JET"
+  },
+  "kbyg": {
+    "eyebrow": "Know Before You Go",
+    "title": "Greece",
+    "sub": "A few practical notes for your week across Athens and the Cyclades — currency, ferries, tipping, and the rest of the small things that make travel feel easy.",
+    "topics": [
+      { "label": "Passport & Entry", "head": "Valid passport required", "body": "Greece is a Schengen Area country. US citizens do not need a visa for stays under 90 days, and the new ETIAS authorization launches in 2026 — apply online before you fly. Make sure your passport is valid for at least three months beyond your return date." },
+      { "label": "Currency & Payments", "head": "Euro is official", "body": "Major credit cards are accepted at hotels and most restaurants. Smaller tavernas and island shops often prefer cash. ATMs are easy to find in Athens and on every island. A small euro float is useful for taxis and tips." },
+      { "label": "Tipping", "head": "Modest, appreciated, never expected", "body": "Service is typically included on the bill. An extra 5–10% in cash for excellent service is gracious. €1–2 per drink at bars; €5–10 for porters and drivers; €10+ for outstanding concierge help." },
+      { "label": "Language", "head": "Greek, with English everywhere in tourism", "body": "Greek is the official language; English is universal at hotels, restaurants, and the islands' tourist core. A kalimera (good morning) and efcharistó (thank you) are warmly received." },
+      { "label": "Time & Weather", "head": "EEST · warm, dry, breezy in mid-May", "body": "Eastern European Summer Time (UTC+3) — seven hours ahead of US Eastern. Mid-May runs 68–78°F with sunshine and the Aegean's signature meltemi breeze on the islands. Pack layers for evenings and cooler ferry decks." },
+      { "label": "Power & Plugs", "head": "230V · European Type C / F", "body": "Two-prong European outlets, same as Continental Europe. Most modern phone and laptop chargers handle 230V automatically. Bring one or two adapters for hair tools and anything single-voltage." },
+      { "label": "Connectivity", "head": "Strong coverage on every island", "body": "T-Mobile, AT&T, and Verizon all offer competitive international plans for Greece. Wi-Fi is standard at every hotel and most cafés. Download offline Google Maps before you leave — it's faster than relying on signal in the village alleys." },
+      { "label": "Ferries & Inter-Island Travel", "head": "Show up 45 minutes early", "body": "Your ferries between Mykonos, Paros, and Santorini are pre-booked on Seajets — fast, comfortable catamarans that handle the route in under an hour. Ports are small and unfussy; arrive 45 minutes ahead, your driver will help with luggage. Crossings can be choppy in heavy meltemi weeks; bring a Bonine if you're sensitive." }
+    ]
+  },
+  "overview": {
+    "eyebrow": "Your Trip",
+    "title": "At a Glance",
+    "who": "Joanna Johnsen",
+    "summary_line": "6 nights · May 11 — 17, 2026 · Athens, Mykonos, Paros, Santorini",
+    "where_script": "Greece"
+  },
+  "days": [
+    {
+      "n": "01",
+      "weekday": "Monday",
+      "date_label": "Monday, May 11",
+      "title": "Welcome to Athens",
+      "subtitle": "Arrival · the Acropolis at golden hour · sunset dinner on the Riviera",
+      "overview_summary": "Arrive ATH · Wine & Tales beneath the Parthenon · Check-in at La Divina · Dinner at Astir Four Seasons",
+      "items": [
+        { "time": "Morning", "tz_loc": "EEST · ATH", "title": "Arrive Athens International (ATH)", "body": "Touch down at Eleftherios Venizelos. A driver from your private transfer service will be waiting in arrivals to escort you and your luggage to the car." },
+        { "time": "12:00 PM", "tz_loc": "EEST · ATH", "title": "Private transfer · Airport to La Divina", "body": "Roughly 45 minutes into central Athens, depending on traffic. Your driver speaks English and knows the city." },
+        { "time": "2:00 PM", "tz_loc": "PLAKA", "title": "Wine & Tales Beneath the Parthenon", "badges": ["CONFIRMED", "4 HOURS"], "body": "A licensed private guide leads you up to the Acropolis and the Parthenon, then through the Acropolis Museum, finishing with a wine tasting in a beautifully curated bar in Plaka. Greek wines, traditional bites, and the kind of stories the audio guides skip.", "meta": "Included: state-licensed guide, Acropolis & museum entries, tasting · Not included: lunch, transport between stops" },
+        { "time": "2:10 PM", "tz_loc": "ATHENS", "title": "Check-in at La Divina", "badges": ["CONFIRMED"], "body": "Your bags are waiting. La Divina's 12 suites sit in a neoclassical mansion once dedicated to Maria Callas, with Acropolis views from the rooftop. Settle in whenever you finish at the museum.", "meta": "1 night · Mon, May 11 — Tue, May 12" },
+        { "time": "5:45 PM", "tz_loc": "VOULIAGMENI", "title": "Transfer to the Athenian Riviera", "body": "Your driver collects you from La Divina for the 30-minute drive south down the coast to Vouliagmeni." },
+        { "time": "6:30 PM", "tz_loc": "ASTIR", "title": "Dinner at Astir Four Seasons", "badges": ["CONFIRMED"], "body": "Dinner on the property at one of the Four Seasons' beachside restaurants, with a quick tour of the legendary peninsula resort if you're up for it. Sunset on the Aegean from arguably the best stretch of the Riviera." }
+      ]
+    },
+    {
+      "n": "02",
+      "weekday": "Tuesday",
+      "date_label": "Tuesday, May 12",
+      "title": "Athens to Mykonos",
+      "subtitle": "Quick island flight · Katikies arrival · a private chef night at the villa",
+      "overview_summary": "Flight ATH → JMK · Katikies Mykonos lunch · Check-in at Psarou Delight Villa · Cook & Feast in Style chef dinner",
+      "items": [
+        { "time": "10:45 AM", "tz_loc": "ATHENS", "title": "Check-out at La Divina", "body": "Settle any incidentals at the front desk. Your driver will be waiting outside at 11:00." },
+        { "time": "11:00 AM", "tz_loc": "ATHENS", "title": "Private transfer · La Divina to ATH", "body": "Direct to the airport, roughly 45 minutes. Domestic terminal." },
+        { "time": "1:30 PM", "tz_loc": "EEST · ATH", "title": "Flight ATH → JMK", "body": "Aegean / Sky Express short hop to Mykonos. Forty minutes in the air; arrive 2:10 PM.", "meta": "Flight time: 40 min · Carry-on plus one checked bag" },
+        { "time": "2:10 PM", "tz_loc": "EEST · JMK", "title": "Welcome to Mykonos", "body": "Your private van and driver will meet you at arrivals. They'll handle luggage and stay with you for the duration of your time on the island." },
+        { "time": "3:00 PM", "tz_loc": "AGIOS IOANNIS", "title": "Lunch at Katikies Mykonos", "badges": ["CONFIRMED"], "body": "An afternoon at one of Mykonos's most beautifully designed sea-view properties — finger food, cocktails, and a tour of the suites if you'd like one. A gentle entry to the island." },
+        { "time": "5:30 PM", "tz_loc": "PSAROU", "title": "Check-in at Psarou Delight Villa", "badges": ["CONFIRMED", "BLUEVILLAS"], "body": "Your home for the next two nights. Private pool, sea views, dedicated concierge from BlueVillas, and a butler available for anything you need.", "meta": "2 nights · Tue, May 12 — Thu, May 14 · BlueVillas concierge handles arrivals and any in-villa requests" },
+        { "time": "7:00 PM", "tz_loc": "AT THE VILLA", "title": "Cook & Feast in Style — private chef dinner", "badges": ["CONFIRMED", "5 HOURS"], "body": "A private chef arrives at the villa for a hands-on Greek cooking class and four-course dinner on the veranda overlooking the Aegean. Batzina (zucchini-feta pie), Mykonos Mostra salad, papoutsakia, and orange cake — paired with local wine. Casual, social, exactly the right first night.", "meta": "Included: chef, all ingredients, full menu, wine pairings" }
+      ]
+    },
+    {
+      "n": "03",
+      "weekday": "Wednesday",
+      "date_label": "Wednesday, May 13",
+      "title": "Mykonos Town & the Beach Club Circuit",
+      "subtitle": "Whitewashed alleys at golden hour · Nammos · Scorpios · dinner at Buddha Bar",
+      "overview_summary": "Mykonos Town walking tour · Souvlaki lunch · Nammos & Scorpios · Dinner at Santa Marina's Buddha Bar",
+      "items": [
+        { "time": "9:30 AM", "tz_loc": "MYKONOS TOWN", "title": "Town Walkabout", "badges": ["CONFIRMED", "1.5 HOURS"], "body": "An English-speaking local guide walks you through Chora's whitewashed maze — the old port, Paraportiani Church, Matoyianni Street, and Little Venice with its iconic windmills. Camera-ready around every corner.", "meta": "Driver waits nearby; meet back at a fixed point when you finish" },
+        { "time": "12:30 PM", "tz_loc": "MYKONOS TOWN", "title": "Souvlaki lunch", "badges": ["CONFIRMED"], "body": "A casual, classic Greek lunch in the heart of Chora — the antidote to the white-tablecloth scene. Authentic, fast, exactly what you want at midday." },
+        { "time": "1:00 PM", "tz_loc": "PSAROU", "title": "Transfer back to the villa", "body": "Fifteen minutes to the villa for an afternoon at the pool — or skip it and head straight on if you'd rather." },
+        { "time": "4:10 PM", "tz_loc": "PSAROU BEACH", "title": "Drinks at Nammos", "badges": ["1 HOUR"], "body": "The Mykonos beach club, full stop. Walk the dunes, grab a cocktail, see the scene." },
+        { "time": "5:10 PM", "tz_loc": "PARAGA", "title": "Cocktails at Scorpios", "badges": ["1 HOUR"], "body": "The other half of the Mykonos beach club ritual. Sunset DJ sets, bohemian-luxe interiors, the kind of place that's better at the front end of the night than the back." },
+        { "time": "6:30 PM", "tz_loc": "ORNOS", "title": "Dinner at Buddha Bar · Santa Marina", "badges": ["CONFIRMED", "2 HOURS"], "body": "Dinner at the Santa Marina resort's Buddha Bar, with a quick property look if you'd like one. Pan-Asian menu, sweeping bay views, and the most reliably beautiful sunset spot on the island." }
+      ]
+    },
+    {
+      "n": "04",
+      "weekday": "Thursday",
+      "date_label": "Thursday, May 14",
+      "title": "Mykonos to Paros",
+      "subtitle": "An hour by ferry · organic farm tasting in Naoussa · dinner at Avant Mar",
+      "overview_summary": "Ferry JMK → PAS · Organic Farm Tour & Lunch in Naoussa · Check-in at Avant Mar · Matsuhisa-led dinner",
+      "items": [
+        { "time": "11:15 AM", "tz_loc": "PSAROU", "title": "Check-out at Psarou Delight Villa", "body": "BlueVillas concierge confirms anything outstanding. Driver loads bags." },
+        { "time": "11:30 AM", "tz_loc": "MYKONOS", "title": "Transfer to Mykonos Port (Tourlos)", "body": "Fifteen minutes to the port. Your driver hands you off to the Seajets ground team." },
+        { "time": "12:25 PM", "tz_loc": "EEST · TOURLOS", "title": "Ferry Mykonos → Paros", "badges": ["CONFIRMED", "SEAJETS"], "body": "High-speed catamaran, roughly one hour, comfortable assigned seating. Light snacks aboard. Arrive Parikia (Paros Port) at 1:25 PM.", "meta": "Booking confirmed · Show up 45 minutes early" },
+        { "time": "1:15 PM", "tz_loc": "EEST · PAROS", "title": "Welcome to Paros", "body": "A new private van and driver greet you at the port. They stay with you across both Paros and (transferred to a Santorini partner) the next day." },
+        { "time": "1:45 PM", "tz_loc": "NAOUSSA", "title": "Organic Farm Tour & Lunch", "badges": ["CONFIRMED", "2 HOURS"], "body": "A working organic farm overlooking Naoussa Bay. Wander the rows of grapes, olives, capers, oregano, pomegranates, figs — meet the chickens and goats, then sit down on the balcony for a tasting menu drawn entirely from what you've just walked past. Wine and water included.", "meta": "Included: guided tour, full lunch, wine, hotel transfers" },
+        { "time": "4:30 PM", "tz_loc": "PIPERI BEACH", "title": "Check-in at Avant Mar", "badges": ["CONFIRMED", "LEADING HOTELS"], "body": "A 38-key Leading Hotels property on Piperi Beach, just outside Naoussa. Expect a quiet pool, Cycladic minimalism, and the kind of attentive staff that anticipates rather than asks.", "meta": "1 night · Thu, May 14 — Fri, May 15" },
+        { "time": "6:30 PM", "tz_loc": "AVANT MAR", "title": "Dinner at Matsuhisa Paros", "badges": ["CONFIRMED"], "body": "Nobu Matsuhisa's outpost lives at Avant Mar, so dinner is just downstairs. Expect the classic Matsuhisa hits — black cod, yellowtail jalapeño — done in a relaxed island setting." }
+      ]
+    },
+    {
+      "n": "05",
+      "weekday": "Friday",
+      "date_label": "Friday, May 15",
+      "title": "Paros to Santorini",
+      "subtitle": "A long Cycladic morning · ferry to the caldera · wine tour through volcanic vineyards",
+      "overview_summary": "Morning at Cosme & Andronis Wellness · Ferry PAS → JTR · Wine Paths of Santorini · Check-in at Andronis Arcadia",
+      "items": [
+        { "time": "10:00 AM", "tz_loc": "PAROS", "title": "Morning visit to Cosme, a Luxury Collection Resort", "body": "A look at one of Paros's newer design-forward properties — sister property to Parilio — for context if you're thinking about a future stay or a longer Paros leg." },
+        { "time": "10:30 AM", "tz_loc": "AVANT MAR", "title": "Check-out at Avant Mar", "body": "Bags loaded. Driver waiting." },
+        { "time": "12:20 PM", "tz_loc": "PAROS", "title": "Lunch at Andronis Concept Wellness Resort", "badges": ["CONFIRMED"], "body": "Lunch poolside before the ferry. Light Mediterranean menu, sea breeze, no rush." },
+        { "time": "1:25 PM", "tz_loc": "EEST · PAROS PORT", "title": "Ferry Paros → Santorini", "badges": ["CONFIRMED", "SEAJETS"], "body": "Forty-five minutes by catamaran into the caldera. Arrive Athinios Port at 2:10 PM. Crossings can be lively — sit toward the middle of the boat if it's a windy day.", "meta": "Booking confirmed · Show up 45 minutes early" },
+        { "time": "2:15 PM", "tz_loc": "EEST · ATHINIOS", "title": "Transfer · Santorini Port to Oia", "body": "Roughly an hour up the spine of the island, climbing as you go. The first caldera view from the road is one of the trip's quiet highlights." },
+        { "time": "3:00 PM", "tz_loc": "SANTORINI", "title": "Wine Paths of Santorini", "badges": ["CONFIRMED", "2 HOURS"], "body": "A private sommelier-led tour through three of the island's most distinctive wineries — the volcanic terroir produces wines you can't find anywhere else. Tastings paired with local nibbles, scenic drives in between.", "meta": "Included: luxury private vehicle, three wineries, tastings, light bites" },
+        { "time": "5:00 PM", "tz_loc": "OIA", "title": "Check-in at Andronis Arcadia", "badges": ["CONFIRMED", "LEGEND COLLECTION"], "body": "Your home for the last two nights. 114 suites carved into the cliffs of Oia, private pool on the suite, Evexia Spa, and an in-house Beefbar.", "meta": "2 nights · Fri, May 15 — Sun, May 17" },
+        { "time": "6:15 PM", "tz_loc": "OIA", "title": "Dinner at Andronis Concept", "badges": ["CONFIRMED"], "body": "Sister property a short drive away, with one of the most striking pool-edge restaurants on the island. Property tour and dinner — the design alone is worth the visit." }
+      ]
+    },
+    {
+      "n": "06",
+      "weekday": "Saturday",
+      "date_label": "Saturday, May 16",
+      "title": "A Day on the Water · Caldera Sunset",
+      "subtitle": "Private cruise to the volcano and the colored beaches · drinks at Canaves · farewell at Pacman",
+      "overview_summary": "Six-hour private cruise · Hot Springs, Red Beach, White Beach · Drinks at Canaves Epitome · Farewell dinner at Pacman",
+      "items": [
+        { "time": "9:15 AM", "tz_loc": "AMMOUDI BAY", "title": "Private Cruise · Hot Springs, Red Beach, White Beach", "badges": ["CONFIRMED", "6 HOURS"], "body": "Your private boat for the day. Three signature stops — the hot springs at the foot of the volcano, the dramatic Red Beach, and the quieter White Beach near Messa Pigadia. Lunch and wine on board. Crew handles everything; you swim and sun.", "meta": "Included: skipper, crew, fuel, expert guide, lunch, wine, towels, bottled water · Round-trip transfers from Andronis Arcadia" },
+        { "time": "1:30 PM", "tz_loc": "IMEROVIGLI", "title": "Drinks at Canaves Epitome", "body": "An hour at the Canaves flagship — a quick property look and a cocktail with one of the best caldera views from this side of the island." },
+        { "time": "5:30 PM", "tz_loc": "OIA", "title": "Andronis properties walk · Farewell dinner at Pacman", "badges": ["CONFIRMED"], "body": "A walk through the Andronis collection's various villas as the sun begins to set, then dinner at Pacman — the cliff-edge restaurant that closes the trip on its highest note. Bring a layer; the breeze picks up after sunset." }
+      ]
+    },
+    {
+      "n": "07",
+      "weekday": "Sunday",
+      "date_label": "Sunday, May 17",
+      "title": "Departure",
+      "subtitle": "One last caldera morning · home from JTR",
+      "overview_summary": "Check-out from Andronis Arcadia · Transfer to Santorini Airport · Departure",
+      "items": [
+        { "time": "Morning", "tz_loc": "OIA", "title": "Slow morning at Andronis Arcadia", "body": "Breakfast on the suite terrace if the weather cooperates. The pool is yours until pickup." },
+        { "time": "12:00 PM", "tz_loc": "OIA", "title": "Check-out at Andronis Arcadia", "body": "Settle any incidentals. The concierge holds bags if you'd like a last walk through the village." },
+        { "time": "12:00 PM", "tz_loc": "SANTORINI", "title": "Transfer · Hotel to Santorini Airport (JTR)", "body": "Roughly 35 minutes from Oia to the airport, depending on Sunday traffic." },
+        { "time": "Afternoon", "tz_loc": "EEST · JTR", "title": "Departure", "body": "Onward connection to Athens or directly home, depending on your routing. Safe travels — and ευχαριστώ for a beautiful week." }
+      ]
+    }
+  ],
+  "lodging": {
+    "eyebrow": "Where You're Staying",
+    "title": "Your Home Each Night",
+    "stops": [
+      {
+        "location": "Athens · 1 night",
+        "name": "La Divina",
+        "photo": "greece/lodging-la-divina.jpg",
+        "dates": "Mon, May 11 — Tue, May 12",
+        "nights": "1 night",
+        "description": "A new 12-suite hotel in a neoclassical mansion in Athens's historic center, once dedicated to Maria Callas. Stunning views of the Acropolis and Ancient Agora, walking distance to Plaka, and the kind of intimate scale that feels more like a private home than a hotel."
+      },
+      {
+        "location": "Mykonos · 2 nights",
+        "name": "Psarou Delight Villa · BlueVillas",
+        "photo": "greece/lodging-psarou-delight.jpg",
+        "dates": "Tue, May 12 — Thu, May 14",
+        "nights": "2 nights",
+        "description": "A private villa in the BlueVillas Luxury Concept collection, set above Psarou with a private pool, unobstructed sea views, and a dedicated concierge plus butler. VIP reservations, arrival transfers, and welcome delicacies are all included as part of the BlueVillas service."
+      },
+      {
+        "location": "Paros · 1 night",
+        "name": "Avant Mar · Leading Hotels of the World",
+        "photo": "greece/lodging-avant-mar.jpg",
+        "dates": "Thu, May 14 — Fri, May 15",
+        "nights": "1 night",
+        "description": "A 38-key luxury resort on Paros's Piperi Beach, steps from Naoussa. Contemporary Cycladic design, a beautiful pool, a wellness area, and Matsuhisa Paros — Nobu Matsuhisa's only Greek outpost — on the property."
+      },
+      {
+        "location": "Santorini · 2 nights",
+        "name": "Andronis Arcadia",
+        "photo": "greece/lodging-andronis-arcadia.jpg",
+        "dates": "Fri, May 15 — Sun, May 17",
+        "nights": "2 nights",
+        "description": "Member of the LEGEND Collection by Preferred Hotels. 114 suites and villas carved into the cliffs of Oia, with the Evexia Spa, Beefbar Santorini, and private pools. Bespoke service, serene caldera views, and one of the most reliably breathtaking sunsets in the world."
+      }
+    ]
+  },
+  "snapshot": {
+    "eyebrow": "Confirmed Bookings",
+    "title": "Reservations Snapshot",
+    "groups": [
+      {
+        "label": "Flights",
+        "rows": [
+          { "day": "Tue, May 12", "time": "1:30 PM", "name": "ATH → JMK · Aegean / Sky Express", "notes": "40 min · Domestic terminal · Arrive 2:10 PM" }
+        ]
+      },
+      {
+        "label": "Ferries",
+        "rows": [
+          { "day": "Thu, May 14", "time": "12:25 PM", "name": "Mykonos → Paros · Seajets", "notes": "1h crossing · Arrive Parikia 1:25 PM · Confirmed" },
+          { "day": "Fri, May 15", "time": "1:25 PM", "name": "Paros → Santorini · Seajets", "notes": "45 min · Arrive Athinios 2:10 PM · Confirmed" }
+        ]
+      },
+      {
+        "label": "Hotels",
+        "rows": [
+          { "day": "May 11 — May 12", "time": "1 night", "name": "La Divina · Athens", "notes": "Confirmed · Acropolis-view suite" },
+          { "day": "May 12 — May 14", "time": "2 nights", "name": "Psarou Delight Villa · Mykonos", "notes": "BlueVillas · Private pool · Concierge & butler included" },
+          { "day": "May 14 — May 15", "time": "1 night", "name": "Avant Mar · Paros · LHW", "notes": "Piperi Beach · Confirmed" },
+          { "day": "May 15 — May 17", "time": "2 nights", "name": "Andronis Arcadia · Oia, Santorini", "notes": "LEGEND Collection · Confirmed" }
+        ]
+      },
+      {
+        "label": "Activities & Transfers",
+        "rows": [
+          { "day": "Mon, May 11", "time": "12:00 PM", "name": "Private transfer · ATH → La Divina", "notes": "English-speaking driver · ~45 min" },
+          { "day": "Mon, May 11", "time": "2:00 PM", "name": "Wine & Tales Beneath the Parthenon", "notes": "4h · Licensed guide · Acropolis + museum + tasting" },
+          { "day": "Mon, May 11", "time": "5:45 PM", "name": "Transfer · La Divina → Vouliagmeni", "notes": "30 min" },
+          { "day": "Tue, May 12", "time": "11:00 AM", "name": "Transfer · La Divina → ATH", "notes": "Domestic terminal · ~45 min" },
+          { "day": "Tue, May 12", "time": "Afternoon", "name": "Mykonos disposal van", "notes": "Stays with you across the island" },
+          { "day": "Tue, May 12", "time": "7:00 PM", "name": "Cook & Feast in Style · Private chef at villa", "notes": "5h · 4-course menu + wine" },
+          { "day": "Wed, May 13", "time": "9:30 AM", "name": "Mykonos Town Walkabout", "notes": "1.5h · English-speaking guide" },
+          { "day": "Thu, May 14", "time": "11:30 AM", "name": "Transfer · Villa → Mykonos Port", "notes": "15 min" },
+          { "day": "Thu, May 14", "time": "1:45 PM", "name": "Organic Farm Tour & Lunch · Naoussa", "notes": "2h · Round-trip transfers included" },
+          { "day": "Fri, May 15", "time": "2:15 PM", "name": "Transfer · Athinios Port → Oia", "notes": "~1 hour" },
+          { "day": "Fri, May 15", "time": "3:00 PM", "name": "Wine Paths of Santorini", "notes": "2h · 3 wineries · Sommelier-led" },
+          { "day": "Sat, May 16", "time": "9:15 AM", "name": "Private Cruise · Volcano, Red Beach, White Beach", "notes": "6h · Lunch & wine onboard · Round-trip hotel transfers" },
+          { "day": "Sun, May 17", "time": "12:00 PM", "name": "Transfer · Andronis Arcadia → JTR", "notes": "~35 min" }
+        ]
+      },
+      {
+        "label": "Dining",
+        "rows": [
+          { "day": "Mon, May 11", "time": "6:30 PM", "name": "Astir Four Seasons · Vouliagmeni", "notes": "Property dinner · Sunset on the Riviera" },
+          { "day": "Tue, May 12", "time": "3:00 PM", "name": "Katikies Mykonos · Lunch", "notes": "Confirmed · Finger food + cocktails" },
+          { "day": "Wed, May 13", "time": "12:30 PM", "name": "Souvlaki lunch · Mykonos Town", "notes": "Confirmed" },
+          { "day": "Wed, May 13", "time": "6:30 PM", "name": "Buddha Bar · Santa Marina", "notes": "Confirmed · 2-hour table" },
+          { "day": "Thu, May 14", "time": "6:30 PM", "name": "Matsuhisa Paros · Avant Mar", "notes": "Confirmed · On-property" },
+          { "day": "Fri, May 15", "time": "12:20 PM", "name": "Andronis Concept Wellness · Lunch", "notes": "Confirmed · Pre-ferry" },
+          { "day": "Fri, May 15", "time": "6:15 PM", "name": "Andronis Concept · Dinner", "notes": "Confirmed · Property tour included" },
+          { "day": "Sat, May 16", "time": "1:30 PM", "name": "Canaves Epitome · Drinks", "notes": "Confirmed · Caldera view" },
+          { "day": "Sat, May 16", "time": "5:30 PM", "name": "Pacman · Farewell dinner", "notes": "Confirmed · Cliff-edge sunset table" }
+        ]
+      }
+    ]
+  },
+  "contacts": {
+    "eyebrow": "Anything You Need",
+    "title": "Important Contacts",
+    "intro": "Keep this page handy. Reach out anytime and I will sort whatever comes up — and your local DMC team is always one text away on the ground.",
+    "advisor": {
+      "name": "Joanna Johnsen",
+      "role": "Your Travel Advisor",
+      "rows": [
+        ["Phone", "314.503.2342"],
+        ["Email", "joanna.johnsen@fora.travel"],
+        ["Agency", "Joanna Elizabeth Travel"]
+      ]
+    },
+    "cards": [
+      {
+        "name": "BlissTravel · Local DMC",
+        "role": "On-the-Ground Support · Greece",
+        "rows": [
+          ["Email", "yina@allaboutreps.com"],
+          ["Booking Ref", "GR63851"],
+          ["Coverage", "Athens, Mykonos, Paros, Santorini"]
+        ]
+      },
+      {
+        "name": "La Divina",
+        "role": "Your Athens Hotel",
+        "rows": [
+          ["Address", "Athens Historic Center"],
+          ["Notes", "Concierge available 24h"]
+        ]
+      },
+      {
+        "name": "Psarou Delight Villa · BlueVillas",
+        "role": "Your Mykonos Villa",
+        "rows": [
+          ["Concierge", "Provided on arrival by BlueVillas"],
+          ["Services", "Butler, transfers, VIP reservations"]
+        ]
+      },
+      {
+        "name": "Avant Mar",
+        "role": "Your Paros Hotel · Leading Hotels",
+        "rows": [
+          ["Address", "Piperi Beach, Naoussa, Paros"],
+          ["Notes", "Matsuhisa Paros on-property"]
+        ]
+      },
+      {
+        "name": "Andronis Arcadia",
+        "role": "Your Santorini Hotel · LEGEND Collection",
+        "rows": [
+          ["Address", "Oia, Santorini"],
+          ["Notes", "Evexia Spa · Beefbar on-site"]
+        ]
+      }
+    ],
+    "send_off": "Have the most wonderful trip — soak up every island, every sunset, and every glass of assyrtiko. Καλό ταξίδι!",
+    "send_off_signature": "JET"
+  }
+}

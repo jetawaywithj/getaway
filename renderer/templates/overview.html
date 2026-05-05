@@ -2,134 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Your Trip — At a Glance</title>
+<title>JET · At a Glance</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
   .overview { padding: 0.85in 1.0in 0.95in; }
-
-  .ov-eyebrow {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7.5pt;
-    letter-spacing: 0.36em;
-    text-indent: 0.36em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .ov-title {
-    margin-top: 0.14in;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 42pt;
-    line-height: 1.05;
-    letter-spacing: 0.005em;
-    color: var(--ink);
-  }
-
-  .ov-summary {
-    margin-top: 0.18in;
-    font-family: var(--font-body);
-    font-size: 11.5pt;
-    color: var(--ink);
-    line-height: 1.5;
-  }
+  .ov-eyebrow { font-family: var(--font-label); font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase; color: var(--accent); }
+  .ov-title { margin-top: 0.14in; font-family: var(--font-display); font-weight: 400;
+    font-size: 42pt; line-height: 1.05; letter-spacing: 0.005em; color: var(--ink); }
+  .ov-summary { margin-top: 0.18in; font-family: var(--font-body); font-size: 11.5pt;
+    color: var(--ink); line-height: 1.5; }
   .ov-summary .who { font-weight: 500; }
-  .ov-summary .where {
-    font-family: var(--font-script);
-    color: var(--accent);
-    font-size: 22pt;
-    line-height: 1;
-    display: block;
-    margin-top: 4pt;
-  }
-
-  .timeline {
-    margin-top: 0.32in;
-    border-top: 0.5px solid var(--hairline);
-  }
-
-  .day-row {
-    display: grid;
-    grid-template-columns: 0.5in 1.0in 1fr;
-    column-gap: 0.20in;
-    align-items: baseline;
-    padding: 14pt 0;
-    border-bottom: 0.5px solid var(--hairline);
-  }
-
-  .day-row .num {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 26pt;
-    line-height: 1;
-    color: var(--accent);
-    letter-spacing: -0.01em;
-  }
-
-  .day-row .date {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 8pt;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    line-height: 1.4;
-  }
-
-  .day-row .title {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 16pt;
-    line-height: 1.18;
-    color: var(--ink);
-  }
-
-  .day-row .summary {
-    margin-top: 4pt;
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 10.5pt;
-    color: var(--ink-soft);
-    line-height: 1.45;
-  }
-
-  .ov-foot {
-    margin-top: 0.30in;
-    padding-top: 0.16in;
-    border-top: 0.5px solid var(--hairline);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.32in;
-    align-items: baseline;
-  }
-
-  .ov-foot-label {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.30em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .ov-foot-val {
-    margin-top: 4pt;
-    font-family: var(--font-body);
-    font-size: 11pt;
-    color: var(--ink);
-    line-height: 1.45;
-  }
-  .ov-foot-conf {
-    text-align: right;
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.20em;
-    text-transform: uppercase;
-    color: var(--accent);
-    line-height: 1.7;
-  }
-  .ov-foot-conf .conf { color: var(--ink); }
+  .ov-summary .where { font-family: var(--font-script); color: var(--accent);
+    font-size: 22pt; line-height: 1; display: block; margin-top: 4pt; }
+  .timeline { margin-top: 0.32in; border-top: 0.5px solid var(--hairline); }
+  .day-row { display: grid; grid-template-columns: 0.5in 1.0in 1fr;
+    column-gap: 0.20in; align-items: baseline; padding: 14pt 0;
+    border-bottom: 0.5px solid var(--hairline); }
+  .day-row .num { font-family: var(--font-display); font-weight: 400; font-size: 26pt;
+    line-height: 1; color: var(--accent); letter-spacing: -0.01em; }
+  .day-row .date { font-family: var(--font-label); font-weight: 500; font-size: 8pt;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); line-height: 1.4; }
+  .day-row .title { font-family: var(--font-display); font-weight: 400; font-size: 16pt;
+    line-height: 1.18; color: var(--ink); }
+  .day-row .summary { margin-top: 4pt; font-family: var(--font-body); font-style: italic;
+    font-size: 10.5pt; color: var(--ink-soft); line-height: 1.45; }
 </style>
 </head>
 <body>
@@ -138,69 +35,76 @@
   <h1 class="ov-title">At a Glance</h1>
 
   <p class="ov-summary">
-    <span class="who">Jennifer Hunter-Yates &amp; Philip Yates</span> · 2 guests · 5 nights, May 1 — 6, 2026
-    <span class="where">Saint Barthélemy</span>
+    <span class="who">Joanna Johnsen</span> · 6 nights · May 11 — 17, 2026 · Athens, Mykonos, Paros, Santorini
+    <span class="where">Greece</span>
   </p>
 
   <div class="timeline">
-
     <div class="day-row">
       <div class="num">01</div>
-      <div class="date">Fri<br>May 1</div>
+      <div class="date">Mon<br>May 11</div>
       <div>
-        <div class="title">Arrival in St. Barths</div>
-        <div class="summary">Flights JFK → SJU → SBH · Check-in at Fouquet's · Welcome dinner at BONITO</div>
+        <div class="title">Welcome to Athens</div>
+        <div class="summary">Arrive ATH · Wine &amp; Tales beneath the Parthenon · Check-in at La Divina · Dinner at Astir Four Seasons</div>
       </div>
     </div>
 
     <div class="day-row">
       <div class="num">02</div>
-      <div class="date">Sat<br>May 2</div>
+      <div class="date">Tue<br>May 12</div>
       <div>
-        <div class="title">Beach Club Saturday &amp; Bagatelle White Party</div>
-        <div class="summary">Moke arrives · Sunbeds &amp; lunch at La Guérite · Bagatelle White Party</div>
+        <div class="title">Athens to Mykonos</div>
+        <div class="summary">Flight ATH → JMK · Katikies Mykonos lunch · Check-in at Psarou Delight Villa · Cook &amp; Feast in Style chef dinner</div>
       </div>
     </div>
 
     <div class="day-row">
       <div class="num">03</div>
-      <div class="date">Sun<br>May 3</div>
+      <div class="date">Wed<br>May 13</div>
       <div>
-        <div class="title">Nao Beach &amp; Le Beef Bar at Home</div>
-        <div class="summary">Lunch at Nao Beach Club · Dinner at Le Beef Bar in the hotel</div>
+        <div class="title">Mykonos Town &amp; the Beach Club Circuit</div>
+        <div class="summary">Mykonos Town walking tour · Souvlaki lunch · Nammos &amp; Scorpios · Dinner at Santa Marina's Buddha Bar</div>
       </div>
     </div>
 
     <div class="day-row">
       <div class="num">04</div>
-      <div class="date">Mon<br>May 4</div>
+      <div class="date">Thu<br>May 14</div>
       <div>
-        <div class="title">A Day At Sea Aboard the Axopar</div>
-        <div class="summary">Private Axopar 37 charter, 10 AM – 5 PM · Dinner at Sella · 1001 Nights</div>
+        <div class="title">Mykonos to Paros</div>
+        <div class="summary">Ferry JMK → PAS · Organic Farm Tour &amp; Lunch in Naoussa · Check-in at Avant Mar · Matsuhisa-led dinner</div>
       </div>
     </div>
 
     <div class="day-row">
       <div class="num">05</div>
-      <div class="date">Tue<br>May 5</div>
+      <div class="date">Fri<br>May 15</div>
       <div>
-        <div class="title">Gypsea &amp; Isola</div>
-        <div class="summary">Lunch at Gypsea Beach Club · Farewell dinner at Isola</div>
+        <div class="title">Paros to Santorini</div>
+        <div class="summary">Morning at Cosme &amp; Andronis Wellness · Ferry PAS → JTR · Wine Paths of Santorini · Check-in at Andronis Arcadia</div>
       </div>
     </div>
 
     <div class="day-row">
       <div class="num">06</div>
-      <div class="date">Wed<br>May 6</div>
+      <div class="date">Sat<br>May 16</div>
       <div>
-        <div class="title">Departure Home</div>
-        <div class="summary">Hotel transfer to SBH · Flights SBH → SJU → HPN</div>
+        <div class="title">A Day on the Water · Caldera Sunset</div>
+        <div class="summary">Six-hour private cruise · Hot Springs, Red Beach, White Beach · Drinks at Canaves Epitome · Farewell dinner at Pacman</div>
       </div>
     </div>
 
+    <div class="day-row">
+      <div class="num">07</div>
+      <div class="date">Sun<br>May 17</div>
+      <div>
+        <div class="title">Departure</div>
+        <div class="summary">Check-out from Andronis Arcadia · Transfer to Santorini Airport · Departure</div>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
+  <div class="footer-line">Joanna · Greece · May 2026</div>
 </section>
 </body>
 </html>

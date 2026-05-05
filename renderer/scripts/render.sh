@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Render all JET itinerary templates → PDF + PNG, then combine into one book PDF.
-# Usage: scripts/render.sh                        # all pages + combined book
-#        scripts/render.sh templates/cover.html   # just one
+# Usage: scripts/render.sh                        # render trip "yates" (default)
+#        scripts/render.sh greece                 # render trip data/greece.json
+#        scripts/render.sh templates/cover.html   # just one HTML file
 #
 # To skip the confirmations appendix: SKIP_CONFIRMATIONS=1 scripts/render.sh
 set -euo pipefail
@@ -9,8 +10,22 @@ set -euo pipefail
 CHROME="${CHROME:-/opt/pw-browsers/chromium-1194/chrome-linux/chrome}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 REPO="$(cd "$ROOT/.." && pwd)"
-OUT="$REPO/samples"
-CONFIRMS="$REPO/confirmations"
+
+# If first arg looks like a slug (no "templates/" or ".html"), treat it as the trip slug.
+TRIP="yates"
+SINGLE=""
+if [[ $# -gt 0 ]]; then
+  if [[ "$1" == templates/* || "$1" == *.html ]]; then
+    SINGLE="$1"
+  else
+    TRIP="$1"
+  fi
+fi
+
+OUT="$REPO/samples/$TRIP"
+CONFIRMS="$REPO/confirmations/$TRIP"
+# Fall back to top-level confirmations dir if no per-trip subdir exists.
+if [[ ! -d "$CONFIRMS" ]]; then CONFIRMS="$REPO/confirmations"; fi
 mkdir -p "$OUT"
 
 CHROME_FLAGS=(
@@ -45,36 +60,28 @@ render_one() {
     "$file_url" 2>&1 | grep -vE "^\[|handshake failed|SSL error|net_error|Fontconfig|Could not|GPU process|libGL|EGL|gpu/" || true
 }
 
-# Page order for the combined book.
-# Note: know-before.html is for international trips — drop the line for
-# domestic / US-only itineraries.
-PAGES=(
-  templates/cover.html
-  templates/note.html
-  templates/know-before.html
-  templates/overview.html
-  templates/lodging.html
-  templates/day-01.html
-  templates/day-02.html
-  templates/day-03.html
-  templates/day-04.html
-  templates/day-05.html
-  templates/day-06.html
-  templates/snapshot.html
-  templates/contacts.html
-)
-
-if [[ $# -gt 0 ]]; then
-  cd "$ROOT" && render_one "$1"
+if [[ -n "$SINGLE" ]]; then
+  cd "$ROOT" && render_one "$SINGLE"
   echo "✓ Output → $OUT"
   exit 0
 fi
 
-# Regenerate day templates from data/yates.json each run
-echo "→ build-days from data/yates.json"
-node "$ROOT/scripts/build-days.mjs"
+# Regenerate all templates from data/<trip>.json
+echo "→ build trip \"$TRIP\" from data/$TRIP.json"
+node "$ROOT/scripts/build.mjs" "$TRIP"
 
 cd "$ROOT"
+
+# Page order for the combined book. Day pages discovered dynamically so this
+# works for trips of any length. know-before / lodging are skipped if the
+# build step didn't emit them (e.g. domestic trip with no KBYG block).
+PAGES=(templates/cover.html templates/note.html)
+[[ -f templates/know-before.html ]] && PAGES+=(templates/know-before.html)
+PAGES+=(templates/overview.html)
+[[ -f templates/lodging.html ]] && PAGES+=(templates/lodging.html)
+while IFS= read -r d; do PAGES+=("$d"); done < <(ls -1 templates/day-*.html 2>/dev/null | sort)
+PAGES+=(templates/snapshot.html templates/contacts.html)
+
 for tpl in "${PAGES[@]}"; do
   render_one "$tpl"
 done
@@ -93,11 +100,12 @@ fi
 if command -v pdfunite >/dev/null 2>&1; then
   echo "→ combining → book.pdf"
   cd "$OUT"
-  BOOK_PARTS=(
-    cover.pdf note.pdf know-before.pdf overview.pdf lodging.pdf
-    day-01.pdf day-02.pdf day-03.pdf day-04.pdf day-05.pdf day-06.pdf
-    snapshot.pdf contacts.pdf
-  )
+  BOOK_PARTS=(cover.pdf note.pdf)
+  [[ -f know-before.pdf ]] && BOOK_PARTS+=(know-before.pdf)
+  BOOK_PARTS+=(overview.pdf)
+  [[ -f lodging.pdf ]] && BOOK_PARTS+=(lodging.pdf)
+  while IFS= read -r d; do BOOK_PARTS+=("$d"); done < <(ls -1 day-*.pdf 2>/dev/null | sort)
+  BOOK_PARTS+=(snapshot.pdf contacts.pdf)
   if [[ ${#APPENDIX_PDFS[@]} -gt 0 ]]; then
     BOOK_PARTS+=(confirmations-divider.pdf)
     BOOK_PARTS+=("${APPENDIX_PDFS[@]}")

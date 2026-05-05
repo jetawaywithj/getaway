@@ -6,58 +6,22 @@
 <link rel="stylesheet" href="../styles/base.css">
 <style>
   .snapshot { padding: 0.6in 0.95in 0.75in; }
-
-  .snapshot-eyebrow {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7.5pt;
-    letter-spacing: 0.36em;
-    text-indent: 0.36em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .snapshot-title {
-    margin-top: 0.10in;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 30pt;
-    line-height: 1.05;
-    letter-spacing: 0.005em;
-    color: var(--ink);
-  }
-
-  .group {
-    margin-top: 0.18in;
-  }
-  .group-label {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7pt;
-    letter-spacing: 0.34em;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding-bottom: 6pt;
-    border-bottom: 0.5px solid var(--accent);
-    margin-bottom: 0;
-  }
-
-  table.res {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-body);
-    font-size: 10pt;
-    color: var(--ink);
-  }
-  table.res td {
-    padding: 4pt 8pt;
-    vertical-align: top;
-    border-bottom: 0.5px solid var(--hairline);
-    line-height: 1.3;
-  }
+  .snapshot-eyebrow { font-family: var(--font-label); font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase; color: var(--accent); }
+  .snapshot-title { margin-top: 0.10in; font-family: var(--font-display); font-weight: 400;
+    font-size: 30pt; line-height: 1.05; letter-spacing: 0.005em; color: var(--ink); }
+  .group { margin-top: 0.18in; }
+  .group-label { font-family: var(--font-label); font-weight: 500; font-size: 7pt;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent);
+    padding-bottom: 6pt; border-bottom: 0.5px solid var(--accent); margin-bottom: 0; }
+  table.res { width: 100%; border-collapse: collapse;
+    font-family: var(--font-body); font-size: 10pt; color: var(--ink); }
+  table.res td { padding: 4pt 8pt; vertical-align: top;
+    border-bottom: 0.5px solid var(--hairline); line-height: 1.3; }
   table.res tr:last-child td { border-bottom: none; }
-
-  .col-day { width: 1.30in; font-family: var(--font-label); font-weight: 500; font-size: 7.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .col-day { width: 1.30in; font-family: var(--font-label); font-weight: 500;
+    font-size: 7.5pt; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); white-space: nowrap; }
   .col-time { width: 1.30in; color: var(--ink-soft); font-size: 9.5pt; white-space: nowrap; }
   .col-name { font-weight: 500; }
   .col-notes { color: var(--ink-soft); font-size: 9pt; line-height: 1.4; }
@@ -71,45 +35,63 @@
   <div class="group">
     <div class="group-label">Flights</div>
     <table class="res">
-      <tr><td class="col-day">Fri, May 1</td><td class="col-time">6:30 AM</td><td class="col-name">JetBlue 1803 · JFK → SJU</td><td class="col-notes">Arrive 10:19 AM AST · Conf. URYEAD</td></tr>
-      <tr><td class="col-day">Fri, May 1</td><td class="col-time">11:50 AM</td><td class="col-name">Tradewind 172 · SJU → SBH</td><td class="col-notes">Arrive 12:57 PM · VIP Experience · Conf. TJRDBU · 50 lb pp</td></tr>
-      <tr><td class="col-day">Wed, May 6</td><td class="col-time">11:20 AM</td><td class="col-name">Tradewind 123 · SBH → SJU</td><td class="col-notes">Arrive 12:25 PM · Conf. TJRDBU</td></tr>
-      <tr><td class="col-day">Wed, May 6</td><td class="col-time">4:55 PM</td><td class="col-name">JetBlue 2602 · SJU → HPN</td><td class="col-notes">Arrive 9:00 PM EDT · Conf. URYEAD</td></tr>
+      <tr><td class="col-day">Tue, May 12</td><td class="col-time">1:30 PM</td><td class="col-name">ATH → JMK · Aegean / Sky Express</td><td class="col-notes">40 min · Domestic terminal · Arrive 2:10 PM</td></tr>
     </table>
   </div>
 
   <div class="group">
-    <div class="group-label">Hotel</div>
+    <div class="group-label">Ferries</div>
     <table class="res">
-      <tr><td class="col-day">May 1 — May 6</td><td class="col-time">5 nights</td><td class="col-name">Fouquet's Saint-Barth · Lurin</td><td class="col-notes">Prestige Suite, Pool &amp; Sea View · Conf. V-25256 · Pre-paid</td></tr>
+      <tr><td class="col-day">Thu, May 14</td><td class="col-time">12:25 PM</td><td class="col-name">Mykonos → Paros · Seajets</td><td class="col-notes">1h crossing · Arrive Parikia 1:25 PM · Confirmed</td></tr>
+      <tr><td class="col-day">Fri, May 15</td><td class="col-time">1:25 PM</td><td class="col-name">Paros → Santorini · Seajets</td><td class="col-notes">45 min · Arrive Athinios 2:10 PM · Confirmed</td></tr>
     </table>
   </div>
 
   <div class="group">
-    <div class="group-label">Activities &amp; Rentals</div>
+    <div class="group-label">Hotels</div>
     <table class="res">
-      <tr><td class="col-day">Sat, May 2</td><td class="col-time">Morning</td><td class="col-name">Moke rental · Drop-off at Fouquet's</td><td class="col-notes">Use through morning of departure</td></tr>
-      <tr><td class="col-day">Sat, May 2</td><td class="col-time">10:30 AM</td><td class="col-name">La Guérite · Loungers</td><td class="col-notes">Via Fouquet's</td></tr>
-      <tr><td class="col-day">Mon, May 4</td><td class="col-time">10 AM – 5 PM</td><td class="col-name">Axopar 37 charter · Jicky Marine</td><td class="col-notes">Picnics included · Boarding Ferry Dock, Gustavia</td></tr>
-      <tr><td class="col-day">Wed, May 6</td><td class="col-time">Morning</td><td class="col-name">Moke rental · Pickup from Fouquet's</td><td class="col-notes">Leave keys with concierge</td></tr>
+      <tr><td class="col-day">May 11 — May 12</td><td class="col-time">1 night</td><td class="col-name">La Divina · Athens</td><td class="col-notes">Confirmed · Acropolis-view suite</td></tr>
+      <tr><td class="col-day">May 12 — May 14</td><td class="col-time">2 nights</td><td class="col-name">Psarou Delight Villa · Mykonos</td><td class="col-notes">BlueVillas · Private pool · Concierge &amp; butler included</td></tr>
+      <tr><td class="col-day">May 14 — May 15</td><td class="col-time">1 night</td><td class="col-name">Avant Mar · Paros · LHW</td><td class="col-notes">Piperi Beach · Confirmed</td></tr>
+      <tr><td class="col-day">May 15 — May 17</td><td class="col-time">2 nights</td><td class="col-name">Andronis Arcadia · Oia, Santorini</td><td class="col-notes">LEGEND Collection · Confirmed</td></tr>
+    </table>
+  </div>
+
+  <div class="group">
+    <div class="group-label">Activities &amp; Transfers</div>
+    <table class="res">
+      <tr><td class="col-day">Mon, May 11</td><td class="col-time">12:00 PM</td><td class="col-name">Private transfer · ATH → La Divina</td><td class="col-notes">English-speaking driver · ~45 min</td></tr>
+      <tr><td class="col-day">Mon, May 11</td><td class="col-time">2:00 PM</td><td class="col-name">Wine &amp; Tales Beneath the Parthenon</td><td class="col-notes">4h · Licensed guide · Acropolis + museum + tasting</td></tr>
+      <tr><td class="col-day">Mon, May 11</td><td class="col-time">5:45 PM</td><td class="col-name">Transfer · La Divina → Vouliagmeni</td><td class="col-notes">30 min</td></tr>
+      <tr><td class="col-day">Tue, May 12</td><td class="col-time">11:00 AM</td><td class="col-name">Transfer · La Divina → ATH</td><td class="col-notes">Domestic terminal · ~45 min</td></tr>
+      <tr><td class="col-day">Tue, May 12</td><td class="col-time">Afternoon</td><td class="col-name">Mykonos disposal van</td><td class="col-notes">Stays with you across the island</td></tr>
+      <tr><td class="col-day">Tue, May 12</td><td class="col-time">7:00 PM</td><td class="col-name">Cook &amp; Feast in Style · Private chef at villa</td><td class="col-notes">5h · 4-course menu + wine</td></tr>
+      <tr><td class="col-day">Wed, May 13</td><td class="col-time">9:30 AM</td><td class="col-name">Mykonos Town Walkabout</td><td class="col-notes">1.5h · English-speaking guide</td></tr>
+      <tr><td class="col-day">Thu, May 14</td><td class="col-time">11:30 AM</td><td class="col-name">Transfer · Villa → Mykonos Port</td><td class="col-notes">15 min</td></tr>
+      <tr><td class="col-day">Thu, May 14</td><td class="col-time">1:45 PM</td><td class="col-name">Organic Farm Tour &amp; Lunch · Naoussa</td><td class="col-notes">2h · Round-trip transfers included</td></tr>
+      <tr><td class="col-day">Fri, May 15</td><td class="col-time">2:15 PM</td><td class="col-name">Transfer · Athinios Port → Oia</td><td class="col-notes">~1 hour</td></tr>
+      <tr><td class="col-day">Fri, May 15</td><td class="col-time">3:00 PM</td><td class="col-name">Wine Paths of Santorini</td><td class="col-notes">2h · 3 wineries · Sommelier-led</td></tr>
+      <tr><td class="col-day">Sat, May 16</td><td class="col-time">9:15 AM</td><td class="col-name">Private Cruise · Volcano, Red Beach, White Beach</td><td class="col-notes">6h · Lunch &amp; wine onboard · Round-trip hotel transfers</td></tr>
+      <tr><td class="col-day">Sun, May 17</td><td class="col-time">12:00 PM</td><td class="col-name">Transfer · Andronis Arcadia → JTR</td><td class="col-notes">~35 min</td></tr>
     </table>
   </div>
 
   <div class="group">
     <div class="group-label">Dining</div>
     <table class="res">
-      <tr><td class="col-day">Fri, May 1</td><td class="col-time">8:15 PM</td><td class="col-name">BONITO St. Barth · Gustavia</td><td class="col-notes">2-hour table · Conf. 9P2AYT3PJPHH</td></tr>
-      <tr><td class="col-day">Sat, May 2</td><td class="col-time">2:45 PM</td><td class="col-name">La Guérite · Lunch</td><td class="col-notes">Confirmed</td></tr>
-      <tr><td class="col-day">Sat, May 2</td><td class="col-time">9:45 PM</td><td class="col-name">Bagatelle · White Party Dinner</td><td class="col-notes">Outdoor table · €350 pp min · All white</td></tr>
-      <tr><td class="col-day">Sun, May 3</td><td class="col-time">2:30 PM</td><td class="col-name">Nao Beach Club · Lunch</td><td class="col-notes">Sunbeds requested morning of</td></tr>
-      <tr><td class="col-day">Sun, May 3</td><td class="col-time">9:00 PM</td><td class="col-name">Le Beef Bar · Hotel dinner</td><td class="col-notes">Confirmed</td></tr>
-      <tr><td class="col-day">Mon, May 4</td><td class="col-time">9:30 PM</td><td class="col-name">Sella · 1001 Nights themed party</td><td class="col-notes">Confirmed</td></tr>
-      <tr><td class="col-day">Tue, May 5</td><td class="col-time">2:30 PM</td><td class="col-name">Gypsea Beach Club · Lunch</td><td class="col-notes">Sunbeds reserved morning of</td></tr>
-      <tr><td class="col-day">Tue, May 5</td><td class="col-time">9:30 PM</td><td class="col-name">Isola · Farewell dinner</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Mon, May 11</td><td class="col-time">6:30 PM</td><td class="col-name">Astir Four Seasons · Vouliagmeni</td><td class="col-notes">Property dinner · Sunset on the Riviera</td></tr>
+      <tr><td class="col-day">Tue, May 12</td><td class="col-time">3:00 PM</td><td class="col-name">Katikies Mykonos · Lunch</td><td class="col-notes">Confirmed · Finger food + cocktails</td></tr>
+      <tr><td class="col-day">Wed, May 13</td><td class="col-time">12:30 PM</td><td class="col-name">Souvlaki lunch · Mykonos Town</td><td class="col-notes">Confirmed</td></tr>
+      <tr><td class="col-day">Wed, May 13</td><td class="col-time">6:30 PM</td><td class="col-name">Buddha Bar · Santa Marina</td><td class="col-notes">Confirmed · 2-hour table</td></tr>
+      <tr><td class="col-day">Thu, May 14</td><td class="col-time">6:30 PM</td><td class="col-name">Matsuhisa Paros · Avant Mar</td><td class="col-notes">Confirmed · On-property</td></tr>
+      <tr><td class="col-day">Fri, May 15</td><td class="col-time">12:20 PM</td><td class="col-name">Andronis Concept Wellness · Lunch</td><td class="col-notes">Confirmed · Pre-ferry</td></tr>
+      <tr><td class="col-day">Fri, May 15</td><td class="col-time">6:15 PM</td><td class="col-name">Andronis Concept · Dinner</td><td class="col-notes">Confirmed · Property tour included</td></tr>
+      <tr><td class="col-day">Sat, May 16</td><td class="col-time">1:30 PM</td><td class="col-name">Canaves Epitome · Drinks</td><td class="col-notes">Confirmed · Caldera view</td></tr>
+      <tr><td class="col-day">Sat, May 16</td><td class="col-time">5:30 PM</td><td class="col-name">Pacman · Farewell dinner</td><td class="col-notes">Confirmed · Cliff-edge sunset table</td></tr>
     </table>
   </div>
 
-  <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
+  <div class="footer-line">Joanna · Greece · May 2026</div>
 </section>
 </body>
 </html>

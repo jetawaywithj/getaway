@@ -2,171 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JET · Your Home for the Week — Fouquet's Saint-Barth</title>
+<title>JET · Where You're Staying</title>
 <link rel="stylesheet" href="../styles/base.css">
 <style>
   body { background: var(--paper-soft); }
-
-  .lodging-photo {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4.4in;
-    background-color: #DCD2BD;
-    overflow: hidden;
-  }
-  .lodging-photo-caption {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-label);
-    font-size: 7pt;
-    font-weight: 500;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: rgba(31, 54, 65, 0.40);
-  }
-  /* Real photo, when present, sits on top and hides the caption.
-   * To use: drop a JPG at the path below. Filename swaps if you rename. */
-  .lodging-photo-image {
-    position: absolute;
-    inset: 0;
-    background-image: url('../assets/photos/lodging-fouquets.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .lodging-body {
-    position: absolute;
-    top: 4.4in;
-    left: 0; right: 0;
-    bottom: 0;
-    padding: 0.55in 1.1in 1.0in;
-    background: var(--paper-soft);
-  }
-
-  .lodging-eyebrow {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7.5pt;
-    letter-spacing: 0.36em;
-    text-indent: 0.36em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .lodging-name {
-    margin-top: 0.10in;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 32pt;
-    line-height: 1.05;
-    letter-spacing: 0.005em;
-    color: var(--ink);
-  }
-
-  .lodging-desc {
-    margin-top: 0.18in;
-    font-family: var(--font-body);
-    font-size: 11pt;
-    line-height: 1.55;
-    color: var(--ink);
-    max-width: 6.4in;
-  }
-
-  .lodging-grid {
-    margin-top: 0.32in;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.18in 0.32in;
-  }
-
-  .block-label {
-    font-family: var(--font-label);
-    font-weight: 500;
-    font-size: 7.5pt;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 8pt;
-  }
-
-  .block-list {
-    list-style: none;
-    font-family: var(--font-body);
-    font-size: 10pt;
-    line-height: 1.5;
-    color: var(--ink);
-  }
-  .block-list li {
-    padding-left: 12pt;
-    position: relative;
-    margin-bottom: 3pt;
-  }
-  .block-list li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 7pt;
-    top: 1pt;
-  }
+  .lodging-multi { padding: 0.65in 0.95in 0.8in; }
+  .lm-eyebrow { font-family: var(--font-label); font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase; color: var(--accent); }
+  .lm-title { margin-top: 0.10in; font-family: var(--font-display); font-weight: 400;
+    font-size: 36pt; line-height: 1.05; letter-spacing: 0.005em; color: var(--ink); }
+  .lm-stops { margin-top: 0.24in; display: flex; flex-direction: column; gap: 0.16in; }
+  .stop { display: grid; grid-template-columns: 2.0in 1fr; gap: 0.24in;
+    border-top: 0.5px solid var(--hairline); padding-top: 0.14in; }
+  .stop-photo { width: 2.0in; height: 1.35in; background-color: #DCD2BD; }
+  .stop-loc { font-family: var(--font-label); font-weight: 500; font-size: 7pt;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent); }
+  .stop-name { margin-top: 4pt; font-family: var(--font-display); font-weight: 400;
+    font-size: 18pt; line-height: 1.1; color: var(--ink); }
+  .stop-meta { margin-top: 3pt; font-family: var(--font-label); font-weight: 500;
+    font-size: 7pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); }
+  .stop-desc { margin-top: 6pt; font-family: var(--font-body); font-size: 10pt;
+    line-height: 1.45; color: var(--ink); }
 </style>
 </head>
 <body>
-<section class="page">
-  <div class="lodging-photo">
-    <div class="lodging-photo-caption">Property Photograph · Fouquet's Saint-Barth</div>
-    <div class="lodging-photo-image"></div>
-  </div>
-  <div class="lodging-body">
-    <div class="lodging-eyebrow">Your Home for the Week</div>
-    <h1 class="lodging-name">Fouquet's Saint-Barth</h1>
-
-    <p class="lodging-desc">A historic address tucked into the hillside above Lurin, with sweeping views of the Caribbean and the harbor. Reimagined by Gilles &amp; Boissier and reopened as one of the island's most beautifully designed properties, Fouquet's offers an elegant colonial feel with a fresh, intimate sensibility.</p>
-
-    <div class="lodging-grid">
-      <div>
-        <div class="block-label">Your Suite</div>
-        <ul class="block-list">
-          <li>Prestige Suite, Pool &amp; Sea View</li>
-          <li>Five nights, May 1 to May 6</li>
-          <li>Confirmation V-25256</li>
-          <li>Check-in 3:00 PM · Check-out 12:00 noon</li>
-          <li>Pre-paid in full · Incidentals settled at check-out</li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="block-label">Hotel Inclusions</div>
-        <ul class="block-list">
-          <li>Daily breakfast buffet, in the dining room or in-suite</li>
-          <li>Loungers at La Guérite Beach Club (reservations required)</li>
-          <li>A selection of items in your minibar</li>
-          <li>Complimentary Wi-Fi throughout the property</li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="block-label">Your Virtuoso Amenities · via Fora</div>
-        <ul class="block-list">
-          <li>$100 USD equivalent food &amp; beverage credit, to be used during your stay (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="block-label">Hotel Contacts</div>
-        <ul class="block-list">
-          <li>+590 590 297 900</li>
-          <li>concierge-stbarth@fouquets.com</li>
-          <li>Dit Lurin, Lieu, Saint Barthélemy</li>
-        </ul>
+<section class="page lodging-multi">
+  <div class="lm-eyebrow">Where You're Staying</div>
+  <h1 class="lm-title">Your Home Each Night</h1>
+  <div class="lm-stops">
+    <div class="stop">
+      <div class="stop-photo" style="background-color: #DCD2BD;"></div>
+      <div class="stop-body">
+        <div class="stop-loc">Athens · 1 night</div>
+        <div class="stop-name">La Divina</div>
+        <div class="stop-meta">Mon, May 11 — Tue, May 12 · 1 night</div>
+        <div class="stop-desc">A new 12-suite hotel in a neoclassical mansion in Athens's historic center, once dedicated to Maria Callas. Stunning views of the Acropolis and Ancient Agora, walking distance to Plaka, and the kind of intimate scale that feels more like a private home than a hotel.</div>
       </div>
     </div>
 
-    <div class="footer-line">Jennifer &amp; Philip · Saint Barthélemy · May 2026</div>
+    <div class="stop">
+      <div class="stop-photo" style="background-color: #DCD2BD;"></div>
+      <div class="stop-body">
+        <div class="stop-loc">Mykonos · 2 nights</div>
+        <div class="stop-name">Psarou Delight Villa · BlueVillas</div>
+        <div class="stop-meta">Tue, May 12 — Thu, May 14 · 2 nights</div>
+        <div class="stop-desc">A private villa in the BlueVillas Luxury Concept collection, set above Psarou with a private pool, unobstructed sea views, and a dedicated concierge plus butler. VIP reservations, arrival transfers, and welcome delicacies are all included as part of the BlueVillas service.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-photo" style="background-color: #DCD2BD;"></div>
+      <div class="stop-body">
+        <div class="stop-loc">Paros · 1 night</div>
+        <div class="stop-name">Avant Mar · Leading Hotels of the World</div>
+        <div class="stop-meta">Thu, May 14 — Fri, May 15 · 1 night</div>
+        <div class="stop-desc">A 38-key luxury resort on Paros's Piperi Beach, steps from Naoussa. Contemporary Cycladic design, a beautiful pool, a wellness area, and Matsuhisa Paros — Nobu Matsuhisa's only Greek outpost — on the property.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-photo" style="background-color: #DCD2BD;"></div>
+      <div class="stop-body">
+        <div class="stop-loc">Santorini · 2 nights</div>
+        <div class="stop-name">Andronis Arcadia</div>
+        <div class="stop-meta">Fri, May 15 — Sun, May 17 · 2 nights</div>
+        <div class="stop-desc">Member of the LEGEND Collection by Preferred Hotels. 114 suites and villas carved into the cliffs of Oia, with the Evexia Spa, Beefbar Santorini, and private pools. Bespoke service, serene caldera views, and one of the most reliably breathtaking sunsets in the world.</div>
+      </div>
+    </div>
   </div>
+  <div class="footer-line">Joanna · Greece · May 2026</div>
 </section>
 </body>
 </html>
