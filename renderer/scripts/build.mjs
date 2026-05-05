@@ -686,10 +686,8 @@ ${rows}
 
   // Page 1 has the title block + intro — fits 4 cards (2 rows of 2).
   // Continuation pages have a smaller header and fit 6 cards (3 rows of 2).
-  // Reserve room on the last page for the send-off + script signature.
   const PAGE1_CAP = 4;
   const PAGEN_CAP = 6;
-  const sendOffReserve = c.send_off ? 1 : 0;
 
   const pageGroups = [];
   let i = 0;
@@ -698,15 +696,6 @@ ${rows}
     const cap = isFirst ? PAGE1_CAP : PAGEN_CAP;
     pageGroups.push(entries.slice(i, i + cap));
     i += cap;
-  }
-  // If the last page is full and we have a send-off, push send-off to its own slot
-  // by leaving the last page slightly less full when needed.
-  const lastPage = pageGroups[pageGroups.length - 1];
-  const lastCap = pageGroups.length === 1 ? PAGE1_CAP : PAGEN_CAP;
-  if (sendOffReserve && lastPage.length > lastCap - 1) {
-    // Move final card to a new page so send-off has room
-    const overflow = lastPage.pop();
-    pageGroups.push([overflow]);
   }
 
   return `<!doctype html>
@@ -820,6 +809,110 @@ function confirmationsDividerHtml() {
 }
 
 // ──────────────────────────────────────────────────────────────────────────
+// HOTEL DIRECTORY (quick-reference cards for each lodging stop)
+// ──────────────────────────────────────────────────────────────────────────
+
+function hotelDirectoryHtml() {
+  const stops = trip.lodging?.stops || [];
+  // Only emit a directory if at least one stop has any contact field worth showing
+  const hasAnyContact = stops.some((s) =>
+    s.address || s.phone || s.concierge || s.email || s.web || s.directory_notes
+  );
+  if (!hasAnyContact) return null;
+
+  const card = (s) => {
+    const rows = [];
+    if (s.location)         rows.push(['Location', s.location]);
+    if (s.dates)            rows.push(['Dates', `${s.dates}${s.nights ? ' · ' + s.nights : ''}`]);
+    if (s.address)          rows.push(['Address', s.address]);
+    if (s.phone)            rows.push(['Phone', s.phone]);
+    if (s.concierge)        rows.push(['Concierge', s.concierge]);
+    if (s.email)            rows.push(['Email', s.email]);
+    if (s.web)              rows.push(['Web', s.web]);
+    if (s.directory_notes)  rows.push(['Notes', s.directory_notes]);
+
+    const rowHtml = rows.map(([k, v]) => `        <li><span class="k">${esc(k)}</span><span>${esc(v)}</span></li>`).join('\n');
+    return `    <div class="contact-card">
+      <div class="contact-name">${esc(s.name)}</div>
+      <div class="contact-role">Your ${esc((s.location || '').split('·')[0].trim() || 'Stay')}</div>
+      <ul class="contact-rows">
+${rowHtml}
+      </ul>
+    </div>`;
+  };
+
+  // Hotel cards carry up to ~8 rows each (location, dates, address, phone,
+  // concierge, email, web, notes), so they're roughly twice as tall as the
+  // contacts cards. Cap at 2 on page 1 and 4 on continuation pages.
+  const PAGE1_CAP = 2;
+  const PAGEN_CAP = 4;
+  const pages = [];
+  let i = 0;
+  while (i < stops.length) {
+    const cap = pages.length === 0 ? PAGE1_CAP : PAGEN_CAP;
+    pages.push(stops.slice(i, i + cap));
+    i += cap;
+  }
+
+  const intro = trip.lodging?.directory_intro
+    || 'Quick-reference card for each property — addresses, phones, and concierge details for the road.';
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JET · Where You're Staying — Hotel Directory</title>
+<link rel="stylesheet" href="../styles/base.css">
+<style>
+  .contacts { padding: 1.0in 1.1in 1.0in; }
+  .contacts-eyebrow { font-family: var(--font-label); font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase; color: var(--accent); }
+  .contacts-title { margin-top: 0.18in; font-family: var(--font-display); font-weight: 400;
+    font-size: 42pt; line-height: 1.05; letter-spacing: 0.005em; color: var(--ink); }
+  .contacts-intro { margin-top: 0.18in; font-family: var(--font-body); font-size: 11pt;
+    color: var(--ink); max-width: 5.6in; }
+  .contacts-grid { margin-top: 0.45in; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.20in 0.30in; }
+  .contact-card { background: var(--card); padding: 0.28in 0.32in 0.30in; }
+  .contact-name { font-family: var(--font-display); font-weight: 400; font-size: 16pt;
+    color: var(--ink); line-height: 1.2; }
+  .contact-role { margin-top: 6pt; font-family: var(--font-label); font-weight: 500;
+    font-size: 7pt; letter-spacing: 0.30em; text-transform: uppercase; color: var(--accent); }
+  .contact-rows { margin-top: 12pt; list-style: none; }
+  .contact-rows li { display: grid; grid-template-columns: 0.95in 1fr; gap: 6pt;
+    padding: 5pt 0; font-family: var(--font-body); font-size: 9.5pt; line-height: 1.4; color: var(--ink); }
+  .contact-rows .k { font-family: var(--font-label); font-weight: 500; font-size: 7pt;
+    letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-mute); padding-top: 1.5pt; }
+</style>
+</head>
+<body>
+${pages.map((group, pi) => {
+  const isFirst = pi === 0;
+  const grouped = group.map(card).join('\n');
+  const titleBlock = isFirst
+    ? `<div class="contacts-eyebrow">Where You're Staying</div>
+  <h1 class="contacts-title">Hotel Directory</h1>
+  <p class="contacts-intro">${esc(intro)}</p>
+
+  <div class="contacts-grid">`
+    : `<div class="contacts-eyebrow">Where You're Staying · Continued</div>
+  <h1 class="contacts-title" style="font-size: 28pt;">Hotel Directory</h1>
+
+  <div class="contacts-grid" style="margin-top: 0.30in;">`;
+  return `<section class="page contacts">
+  ${titleBlock}
+${grouped}
+  </div>
+
+  ${footerLine}
+</section>`;
+}).join('\n')}
+</body>
+</html>
+`;
+}
+
+// ──────────────────────────────────────────────────────────────────────────
 // EMIT
 // ──────────────────────────────────────────────────────────────────────────
 
@@ -830,6 +923,7 @@ write('overview.html', overviewHtml());
 const lodging = lodgingHtml(); if (lodging) write('lodging.html', lodging);
 for (const day of (trip.days || [])) write(`day-${day.n}.html`, dayHtml(day));
 const snap = snapshotHtml(); if (snap) write('snapshot.html', snap);
+const directory = hotelDirectoryHtml(); if (directory) write('hotel-directory.html', directory);
 const contacts = contactsHtml(); if (contacts) write('contacts.html', contacts);
 write('confirmations-divider.html', confirmationsDividerHtml());
 

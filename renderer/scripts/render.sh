@@ -80,7 +80,9 @@ PAGES=(templates/cover.html templates/note.html)
 PAGES+=(templates/overview.html)
 [[ -f templates/lodging.html ]] && PAGES+=(templates/lodging.html)
 while IFS= read -r d; do PAGES+=("$d"); done < <(ls -1 templates/day-*.html 2>/dev/null | sort)
-PAGES+=(templates/snapshot.html templates/contacts.html)
+PAGES+=(templates/snapshot.html)
+[[ -f templates/hotel-directory.html ]] && PAGES+=(templates/hotel-directory.html)
+PAGES+=(templates/contacts.html)
 
 for tpl in "${PAGES[@]}"; do
   render_one "$tpl"
@@ -105,7 +107,9 @@ if command -v pdfunite >/dev/null 2>&1; then
   BOOK_PARTS+=(overview.pdf)
   [[ -f lodging.pdf ]] && BOOK_PARTS+=(lodging.pdf)
   while IFS= read -r d; do BOOK_PARTS+=("$d"); done < <(ls -1 day-*.pdf 2>/dev/null | sort)
-  BOOK_PARTS+=(snapshot.pdf contacts.pdf)
+  BOOK_PARTS+=(snapshot.pdf)
+  [[ -f hotel-directory.pdf ]] && BOOK_PARTS+=(hotel-directory.pdf)
+  BOOK_PARTS+=(contacts.pdf)
   if [[ ${#APPENDIX_PDFS[@]} -gt 0 ]]; then
     BOOK_PARTS+=(confirmations-divider.pdf)
     BOOK_PARTS+=("${APPENDIX_PDFS[@]}")

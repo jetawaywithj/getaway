@@ -190,6 +190,7 @@
   "lodging": {
     "eyebrow": "Where You're Staying",
     "title": "Your Home Each Night",
+    "directory_intro": "Quick reference for each property — addresses, phones, and concierge details for the road. Anything blank is awaiting confirmation from the local DMC.",
     "stops": [
       {
         "location": "Athens · 2 nights",
@@ -197,7 +198,13 @@
         "photo": "greece/lodging-la-divina.jpg",
         "dates": "Sun, May 10 — Tue, May 12",
         "nights": "2 nights",
-        "description": "A new 12-suite hotel in a neoclassical mansion in Athens's historic center, once dedicated to Maria Callas. Stunning views of the Acropolis and Ancient Agora, walking distance to Plaka, and the kind of intimate scale that feels more like a private home than a hotel."
+        "description": "A new 12-suite hotel in a neoclassical mansion in Athens's historic center, once dedicated to Maria Callas. Stunning views of the Acropolis and Ancient Agora, walking distance to Plaka, and the kind of intimate scale that feels more like a private home than a hotel.",
+        "address": "Athens historic center · exact address to confirm",
+        "phone": "—",
+        "concierge": "—",
+        "email": "—",
+        "web": "ladivina.gr",
+        "directory_notes": "Confirm early Sunday check-in via DMC"
       },
       {
         "location": "Mykonos · 2 nights",
@@ -205,7 +212,13 @@
         "photo": "greece/lodging-psarou-delight.jpg",
         "dates": "Tue, May 12 — Thu, May 14",
         "nights": "2 nights",
-        "description": "A private villa in the BlueVillas Luxury Concept collection, set above Psarou with a private pool, unobstructed sea views, and a dedicated concierge plus butler. VIP reservations, arrival transfers, and welcome delicacies are all included as part of the BlueVillas service."
+        "description": "A private villa in the BlueVillas Luxury Concept collection, set above Psarou with a private pool, unobstructed sea views, and a dedicated concierge plus butler. VIP reservations, arrival transfers, and welcome delicacies are all included as part of the BlueVillas service.",
+        "address": "Above Psarou Beach, Mykonos",
+        "phone": "—",
+        "concierge": "Provided on arrival by BlueVillas",
+        "email": "—",
+        "web": "bluevillas.com",
+        "directory_notes": "Butler & VIP reservations included in stay"
       },
       {
         "location": "Paros · 1 night",
@@ -213,7 +226,13 @@
         "photo": "greece/lodging-avant-mar.jpg",
         "dates": "Thu, May 14 — Fri, May 15",
         "nights": "1 night",
-        "description": "A 38-key luxury resort on Paros's Piperi Beach, steps from Naoussa. Contemporary Cycladic design, a beautiful pool, a wellness area, and Matsuhisa Paros — Nobu Matsuhisa's only Greek outpost — on the property."
+        "description": "A 38-key luxury resort on Paros's Piperi Beach, steps from Naoussa. Contemporary Cycladic design, a beautiful pool, a wellness area, and Matsuhisa Paros — Nobu Matsuhisa's only Greek outpost — on the property.",
+        "address": "Piperi Beach, Naoussa, Paros",
+        "phone": "—",
+        "concierge": "—",
+        "email": "—",
+        "web": "avantmar.com",
+        "directory_notes": "Matsuhisa Paros on-property"
       },
       {
         "location": "Santorini · 3 nights",
@@ -221,7 +240,13 @@
         "photo": "greece/lodging-andronis-arcadia.jpg",
         "dates": "Fri, May 15 — Mon, May 18",
         "nights": "3 nights",
-        "description": "Member of the LEGEND Collection by Preferred Hotels. 114 suites and villas carved into the cliffs of Oia, with the Evexia Spa, Beefbar Santorini, and private pools. Bespoke service, serene caldera views, and one of the most reliably breathtaking sunsets in the world."
+        "description": "Member of the LEGEND Collection by Preferred Hotels. 114 suites and villas carved into the cliffs of Oia, with the Evexia Spa, Beefbar Santorini, and private pools. Bespoke service, serene caldera views, and one of the most reliably breathtaking sunsets in the world.",
+        "address": "Oia, Santorini",
+        "phone": "—",
+        "concierge": "—",
+        "email": "—",
+        "web": "andronis.com",
+        "directory_notes": "Evexia Spa · Beefbar Santorini on-site"
       }
     ]
   },
@@ -328,38 +353,6 @@
         "rows": [
           ["Phone", "1 800 247 9297"],
           ["Web", "britishairways.com"]
-        ]
-      },
-      {
-        "name": "La Divina",
-        "role": "Your Athens Hotel",
-        "rows": [
-          ["Address", "Athens Historic Center"],
-          ["Notes", "Confirm early Sunday check-in"]
-        ]
-      },
-      {
-        "name": "Psarou Delight Villa · BlueVillas",
-        "role": "Your Mykonos Villa",
-        "rows": [
-          ["Concierge", "Provided on arrival by BlueVillas"],
-          ["Services", "Butler, transfers, VIP reservations"]
-        ]
-      },
-      {
-        "name": "Avant Mar",
-        "role": "Your Paros Hotel · Leading Hotels",
-        "rows": [
-          ["Address", "Piperi Beach, Naoussa, Paros"],
-          ["Notes", "Matsuhisa Paros on-property"]
-        ]
-      },
-      {
-        "name": "Andronis Arcadia",
-        "role": "Your Santorini Hotel",
-        "rows": [
-          ["Address", "Oia, Santorini"],
-          ["Notes", "Evexia Spa · Beefbar on-site"]
         ]
       }
     ],
