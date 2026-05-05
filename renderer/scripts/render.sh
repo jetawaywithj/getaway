@@ -36,9 +36,11 @@ render_one() {
     --print-to-pdf-no-header \
     "$file_url" 2>&1 | grep -vE "^\[|handshake failed|SSL error|net_error|Fontconfig|Could not|GPU process|libGL|EGL|gpu/" || true
 
+  # Scale factor capped so neither edge exceeds Claude's 2000px many-image
+  # limit (1056 × 2 = 2112). 1.5 → 1224 × 1584, near Anthropic's 1568px sweet spot.
   "$CHROME" "${CHROME_FLAGS[@]}" \
     --window-size=816,1056 \
-    --force-device-scale-factor=2 \
+    --force-device-scale-factor=1.5 \
     --screenshot="$OUT/$name.png" \
     "$file_url" 2>&1 | grep -vE "^\[|handshake failed|SSL error|net_error|Fontconfig|Could not|GPU process|libGL|EGL|gpu/" || true
 }
