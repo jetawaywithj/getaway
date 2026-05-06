@@ -11,7 +11,8 @@ CHROME="${CHROME:-/opt/pw-browsers/chromium-1194/chrome-linux/chrome}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 REPO="$(cd "$ROOT/.." && pwd)"
 
-# If first arg looks like a slug (no "templates/" or ".html"), treat it as the trip slug.
+# If the first arg looks like a trip name (no "templates/" or ".html"), treat
+# it as the trip name. Otherwise treat it as a single HTML file to render.
 TRIP="yates"
 SINGLE=""
 if [[ $# -gt 0 ]]; then

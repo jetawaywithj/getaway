@@ -8,10 +8,26 @@ This repo turns a trip brief into a beautiful PDF itinerary in the JET house sty
 
 There are two kinds of changes you'll make:
 
-1. **Content per trip** — Joanna's flights, this client's hotel list, the welcome note. Lives in `data/<trip>.json`. New trips, new content edits, fresh client copy.
+1. **Content per trip** — Joanna's flights, this client's hotel list, the welcome note. Lives in `data/<trip-name>.json`. New trips, new content edits, fresh client copy.
 2. **Format & look** — fonts, colors, page layouts, when something breaks visually. Lives in `renderer/` (the templates and scripts).
 
 For #1 you can use any Claude conversation. For #2, come back to this repo with Claude Code (or any code-aware Claude session).
+
+---
+
+## What's a "trip name"?
+
+It's just **a short nickname for the trip** — anything memorable. So far we have:
+
+- `yates` — Jennifer & Philip's St. Barths birthday trip
+- `greece` — Joanna's Greek islands FAM
+
+For a new trip, pick something short and obvious. `smith-italy-june` or `anderson-anniversary` or `paris-fall-26` all work. The trip name shows up in two places:
+
+- The trip's recipe file: `data/<trip-name>.json`
+- The folder where the finished PDFs land: `samples/<trip-name>/`
+
+That's all. Pick whatever you'll remember.
 
 ---
 
@@ -21,13 +37,13 @@ For #1 you can use any Claude conversation. For #2, come back to this repo with 
 
 Paste the brief (PDF, email, whatever you have) and tell Claude:
 
-> Here's a new trip. Build me `data/<slug>.json` matching the schema in `data/yates.json` or `data/greece.json`. The slug should be something short like "smith-italy-june-2026". Pull hotel addresses, phones, concierge emails, and websites from each property's site.
+> Here's a new trip. Build me the recipe file `data/<trip-name>.json` matching the structure in `data/yates.json` or `data/greece.json`. Pull hotel addresses, phones, concierge emails, and websites from each property's site.
 
 If Claude has web access, it will fetch real hotel info. If not, it will leave `—` placeholders for you to fill in once the local DMC sends you details.
 
 ### Step 2 — Drop in hero photos (optional but pretty)
 
-Make a folder `renderer/assets/photos/<slug>/` and drop in:
+Make a folder `renderer/assets/photos/<trip-name>/` and drop in:
 
 - `cover.jpg` — the hero shot for the cover page (a destination wide-shot)
 - `lodging-<hotelname>.jpg` — one per hotel for the Lodging page
@@ -39,16 +55,16 @@ If you skip this, the renderer falls back to a soft tan placeholder block — th
 In a terminal in this repo:
 
 ```
-bash renderer/scripts/render.sh <slug>
+bash renderer/scripts/render.sh <trip-name>
 ```
 
-The output lands in `samples/<slug>/`:
+The output lands in `samples/<trip-name>/`:
 - `book.pdf` — the complete deliverable
 - One PDF + PNG per page if you want to share previews
 
 ### Step 4 — Review
 
-Open `samples/<slug>/book.pdf`. If anything looks off, see the troubleshooting section below.
+Open `samples/<trip-name>/book.pdf`. If anything looks off, see the troubleshooting section below.
 
 ---
 
@@ -56,7 +72,7 @@ Open `samples/<slug>/book.pdf`. If anything looks off, see the troubleshooting s
 
 ### "Change the wording on Day 3" or "Add a new dinner reservation"
 
-These are content edits. Open the trip's JSON file and edit the right block, or ask Claude to do it for you:
+These are content edits. Open the trip's recipe file and edit the right block, or ask Claude to do it for you:
 
 > In `data/greece.json`, on Day 03 (the Mykonos villa day), add a new item at 6:00 PM for cocktails at Pasaji.
 
@@ -64,7 +80,7 @@ Then re-run `bash renderer/scripts/render.sh greece`.
 
 ### "Add my client's flight info"
 
-Same thing — open the JSON, find the snapshot's "Flights" group and the relevant Day, add the legs. Or paste the airline confirmation into Claude and say "add these flights to data/<trip>.json".
+Same thing — open the recipe file, find the snapshot's "Flights" group and the relevant Day, add the legs. Or paste the airline confirmation into Claude and say "add these flights to data/<trip-name>.json".
 
 ### "Switch which hotel on Day 5"
 
@@ -85,7 +101,7 @@ Ask the code-aware Claude:
 > The lodging page should now show a fifth column for Wi-Fi password. Update build.mjs and the schema, and re-render Greece to verify.
 
 The format work happens in:
-- `renderer/scripts/build.mjs` — the JavaScript that turns JSON into HTML pages.
+- `renderer/scripts/build.mjs` — the JavaScript that turns the recipe into HTML pages.
 - `renderer/styles/base.css` and `renderer/styles/day.css` — the visual styling (fonts, colors, spacing).
 - `renderer/templates/` — auto-generated; you don't edit these by hand.
 
@@ -95,22 +111,22 @@ The format work happens in:
 
 ### "Page has content cut off at the bottom"
 
-The build script auto-paginates the Snapshot, Hotel Directory, Contacts, Overview, and individual Day pages when they're too long. If something still gets clipped, the row-count thresholds in `build.mjs` can be tightened. Tell a code-aware Claude: "the snapshot is overflowing on this trip — tighten the per-page cap."
+The build script auto-paginates the Snapshot, Hotel Directory, Contacts, Overview, and individual Day pages when they're too long. If something still gets clipped, tell a code-aware Claude: "the snapshot is overflowing on this trip — tighten the per-page cap."
 
 ### "Hero photo isn't showing"
 
-Check the filename in your `data/<slug>.json` matches the file in `renderer/assets/photos/<slug>/`. Filenames are case-sensitive.
+Check the filename in your `data/<trip-name>.json` matches the file in `renderer/assets/photos/<trip-name>/`. Filenames are case-sensitive.
 
 ### "Combined `book.pdf` didn't get created"
 
-The script needs `pdfunite` (from `poppler-utils`) installed. On Mac: `brew install poppler`. On Linux: `apt-get install poppler-utils`. Without it you still get one PDF per page in `samples/<slug>/`.
+The script needs `pdfunite` (from `poppler-utils`) installed. On Mac: `brew install poppler`. On Linux: `apt-get install poppler-utils`. Without it you still get one PDF per page in `samples/<trip-name>/`.
 
 ### "Rendering needs Chrome and it's not finding it"
 
 `renderer/scripts/render.sh` looks for Chrome at a specific path. If you're on a different machine, set the env var:
 
 ```
-CHROME=/path/to/your/chrome bash renderer/scripts/render.sh <slug>
+CHROME=/path/to/your/chrome bash renderer/scripts/render.sh <trip-name>
 ```
 
 ---
@@ -119,9 +135,9 @@ CHROME=/path/to/your/chrome bash renderer/scripts/render.sh <slug>
 
 | What you want to change | File to edit |
 | --- | --- |
-| Add a new trip | New file: `data/<slug>.json` |
-| Edit copy / hotels / days for an existing trip | `data/<slug>.json` |
-| Swap a hero photo | Drop a JPG in `renderer/assets/photos/<slug>/` |
+| Add a new trip | New file: `data/<trip-name>.json` |
+| Edit copy / hotels / days for an existing trip | `data/<trip-name>.json` |
+| Swap a hero photo | Drop a JPG in `renderer/assets/photos/<trip-name>/` |
 | Change fonts, colors, or spacing | `renderer/styles/base.css`, `renderer/styles/day.css` |
 | Change a page's layout structure | `renderer/scripts/build.mjs` |
 | Change which pages appear in the book and in what order | `renderer/scripts/render.sh` |
@@ -130,7 +146,7 @@ CHROME=/path/to/your/chrome bash renderer/scripts/render.sh <slug>
 
 ## The two-Claude workflow that actually works
 
-**Trip-content Claude** (any conversation): "Here's the brief, here are the flights, write the JSON."
+**Trip-content Claude** (any conversation): "Here's the brief, here are the flights, write the recipe."
 
 **Format Claude** (this repo, code-aware session): "Day pages are too dense — make the type one point smaller and tighten line height."
 

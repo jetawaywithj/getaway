@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-/* Build all itinerary HTML pages from data/<slug>.json.
+/* Build all itinerary HTML pages from data/<trip-name>.json.
  *
- * Usage: node build.mjs <slug>           (e.g. "yates" or "greece")
+ * Usage: node build.mjs <trip-name>      (e.g. "yates" or "greece")
  *        node build.mjs                  (defaults to "yates")
  *
  * Emits into renderer/templates/: cover.html, note.html, know-before.html,
  * overview.html, lodging.html, day-NN.html (one per day), snapshot.html,
- * contacts.html, confirmations-divider.html.
+ * hotel-directory.html, contacts.html, confirmations-divider.html.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync, existsSync } from 'node:fs';
@@ -16,8 +16,8 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..', '..');
 
-const slug = process.argv[2] || 'yates';
-const dataPath = resolve(root, `data/${slug}.json`);
+const tripName = process.argv[2] || 'yates';
+const dataPath = resolve(root, `data/${tripName}.json`);
 const trip = JSON.parse(readFileSync(dataPath, 'utf8'));
 
 const tmplDir = resolve(root, 'renderer/templates');
@@ -927,4 +927,4 @@ const directory = hotelDirectoryHtml(); if (directory) write('hotel-directory.ht
 const contacts = contactsHtml(); if (contacts) write('contacts.html', contacts);
 write('confirmations-divider.html', confirmationsDividerHtml());
 
-console.log(`\n✓ built trip "${slug}" (${(trip.days || []).length} days, ${(trip.lodging?.stops || []).length} lodging stop(s))`);
+console.log(`\n✓ built trip "${tripName}" (${(trip.days || []).length} days, ${(trip.lodging?.stops || []).length} lodging stop(s))`);
