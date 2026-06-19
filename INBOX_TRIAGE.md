@@ -98,7 +98,8 @@ purely informational with no ask and no time pressure.
 
 - **Email**: joanna.johnsen@fora.travel
 - **Role**: Luxury travel advisor at Fora Travel
-- **Fora system emails**: support@fora.travel, finance@foratravel.com, no-reply@email.fora.travel — these are operational, not promotional. Always read them fully.
+- **Fora system emails**: support@fora.travel, finance@foratravel.com, no-reply@email.fora.travel — these are operational, not promotional. Read them fully, but apply the exclusions below.
+- **Ignore from Fora**: VIP-related requests (e.g. "VIPing your client", amenity confirmation nudges) and review/survey requests. These are low-priority automated nudges. Do include Fora emails about commission issues, canceled bookings, or action-required booking submissions that are not VIP-related.
 - **High-signal senders**: Hotel reservations teams, DMCs, client names, property booking contacts
 - **Low-signal senders**: marketing@*, newsletter@*, noreply@*, loyalty program mailers
 
